@@ -1,1 +1,0 @@
-# mainakdeb.github.io
