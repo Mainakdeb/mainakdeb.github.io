@@ -16,7 +16,7 @@
 			<!-- Banner -->
 				<section id="banner">
 					<h2>Hello,</h2>
-					<p>This is Mainak.</p>
+					<p><font size="6">This is Mainak.</font></p>
 					<ul class="actions special">
 						
 					</ul>
@@ -27,14 +27,24 @@
 
 					<section class="box special">
 						<header class="major">
-							<h2>I tried to think of a catchy intro line
+							<h2>I started coding because everybody around me was doing so,
 							<br />
-							but it was too much work.</h2>
-							<p>I started coding because everybody around me was doing so,<br/>
-								but then I fell in love with it.<br/>This page features the stuff I did for the past few months.</p>
+							but then I fell in love with it.</h2>
+							<p>This page showcases the stuff I did for the past few months.</p>
 						</header>
-						<span class="image featured"><img src="images/pic01.jpg" alt="" /></span>
+						<span class="image featured"><img src="images/banner3.jpg" style="height:310px;alt="" /></span>
 					</section>
+
+
+
+				<section class="box special">
+					<header class="major">
+						<h2>The amFOSS tasks</h2>
+						<p>The amFOSS tasks forced me to go beyond my comfort zone, <br/>they taught me to teach myself.</p>
+					</header>
+					
+				</section>
+
 
 					<section class="box special features">
 						<div class="features-row">
@@ -112,58 +122,85 @@
 
 
 
-					<center><h2>Extra stuff,<br />
-						apart from the amFOSS tasks.</h2></center>
+						<section class="box special">
+							<header class="major">
+								<h2>The Project :</br> Facial expression classifier.</h2>
+								<p>The Goal was to train a deep learning model to classify facial expressions. <br/> </p>
 
+								<span class="center"><img src="images/pic02.jpg" style="width:500px;height:220px;"  alt="" /></span>
 
-					<div class="row">
-						<center>
-						<div class="col-6 col-12-narrower">
-
-							<section class="box special">
-								<span class="image featured"><img src="images/pic02.jpg" style="width:500px;height:250px;"  alt="" /></span>
-
-								<h3>Dogs_vs_Cats image classifier</h3>
-								<p>A deep learning model(2D CNN) which classifies images of dogs and cats. The purpose of this project was to get used to handling image data and to avoid completing my assignments on time. Currently I'm learning PyTorch, I'll start working on the <a href="https://www.kaggle.com/yusufdede/lung-cancer-dataset">lung cancer dataset</a>
-									 as soon as I get time to do so.</p>
+								<p>This uses OpenCV’s Haar cascades to detect and extract the facial region from the </br>webcam video feed and then displays the corresponding emoji (one of 7 classes) </br>depending on the output from the trained model.</p>
 								<ul class="actions special">
-									<li><a href="https://github.com/Mainakdeb/Image_Classifier_deluxe" class="button alt">Repo</a></li>
+									<li><a href="https://github.com/Mainakdeb/Facial_Expression_Classification" class="button alt">Repo</a></li>
 								</ul>
-							</section>
-						</center>
 
-						</div>
-						<div class="row">
-							<div class="col-6 col-12-narrower">
-	
-								<section class="box special">
-									<span class="image featured"><img src="images/pic69.jpg" alt="" /></span>
-									<h3>Restaurant_Data_analysis</h3>
-									<p>This is what a data analyst might do before going out for a dinner date. <br/> Check out the repo.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/Mainakdeb/Restaurant_Finder_Deluxe" class="button alt">Repo</a></li>
-									</ul>
-								</section>
-	
-							</div>
-						<div class="col-6 col-12-narrower">
 
-							<section class="box special">
-								<span class="image featured"><img src="images/pic03.jpg" alt="" /></span>
-								<h3>Twitter_stats_viewer</h3>
-								<p>Takes the input of a Twitter username(for example RahulGandhi), a tag word(for example "Modi"), year, then plots the frequency of usage of the tag word by the user throughout the year.
-								   For some reason, I'm unable to download more than 400 tweets of a single user. In the process of making this, I learnt about API's, handling CSV's and Data Visualisation. This one still need work though.
-								   
-								</p>
+
+							</header>
+							
+						</section>
+
+
+
+
+						
+						<section class="box special">
+							<header class="major">
+								<h2>The Kaggle Dataset : <br>Sale Price prediction of houses in Ames, Iowa</h2>
+								<p>A real estate agent might be able to do this based on intuition and experience, <br/> but a computer – lacking both – might just accomplish the same.</p>
+
+								<span class="center"><img src="images/house.jpg" style="width:500px;height:250px;"  alt="" /></span>
+
+								<p> The data contained 81 columns, each describing a feature of the property like building type, <br>size, no. of fireplaces, neighborhood etc.  The aim was to train a model to predict the sale price<br> of houses based on the given parameters. I learnt a a lot about data pre-processing,<br> deciding which features to keep and which ones to drop, handling categorical values etc.</p>
 								<ul class="actions special">
-									<li><a href="https://github.com/Mainakdeb/Elections_twitter_stats" class="button alt">Repo</a></li>
+									<li><a href="https://github.com/Mainakdeb/Deep_Real_Estate_Agent" class="button alt">Repo</a></li>
 								</ul>
-							</section>
 
-						</div>
-					</div>
+							</header>
+							
+						</section>
 
-				</section>
+
+
+
+						<section class="box special">
+							<header class="major">
+								<h2>The Wine-quality dataset : <br>Prediction of wine quality</h2>
+								<p>A wine critic is a person who evaluates wine and describes it with a numerical rating. What if we could train a computer to do the same?  </p>
+
+								<span class="center"><img src="images/wine_cat.jpg" style="width:320px;height:250px;"  alt="" /></span>
+
+								<p> The dataset contains 12 columns, 11 of which describe the chemical properties of wine,<br/> the last column corresponds to its quality. The quality of wine is directly correlated to its chemical composition, <br/>these chemical attributes can be used to train a deep learning model to predict its quality.</p>
+								<ul class="actions special">
+									<li><a href="https://github.com/Mainakdeb/Wine_Quality_Prediction" class="button alt">Repo</a></li>
+								</ul>
+
+							</header>
+							
+						</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 			<!-- CTA -->
 				<section id="cta">
