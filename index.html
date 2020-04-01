@@ -1,245 +1,305 @@
 <!DOCTYPE HTML>
 
-<html>
 	<head>
-		<title></title>
+	
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
-	<body class="landing is-preload">
-		<div id="page-wrapper">
 
-			
+	<body class="is-preload">
+
+
+
+
+		<section id="banner">
+			<h2>Welcome to my blog !</h2>
+			<p><font size="6">This page showcases the stuff I did for the past few months.</font></p>
+			<ul class="actions special">
 				
+			</ul>
+		</section>
 
-			<!-- Banner -->
-				<section id="banner">
-					<h2>Hello,</h2>
-					<p><font size="6">This is Mainak.</font></p>
-					<ul class="actions special">
+		<center><h2></h2></center>
+		<center><p><font size="4"></font></p></center>
+
+		<section class="box special">
+			<header class="major">
+				<h2>The amFOSS tasks</h2>
+				<p>The amFOSS tasks forced me to go beyond my comfort zone, <br/>they taught me to teach myself.<br/></p>
+				<ul class="actions special">
+					<li><a href="https://github.com/Mainakdeb/amfoss-tasks" class="button alt">Repo</a></li>
+				</ul>
+			</header>
+			
+		</section>
+
+
+			<section class="box special features">
+				<div class="features-row">
+					<section>
 						
-					</ul>
+						<span class="center" ><img src="https://img.icons8.com/color/128/000000/ruby-programming-language.png"  style="width:100px;height:100px;"  >
+						</span>
+						<h3>Ruby</h3>
+						<p>Ruby was completely alien to me. Google was my only friend. The syntax was easy to grasp. I faced tons of errors but StackOverflow had my back.</p>
+					</section>
+					<section>
+						<span class="center"> <img src="images/Rust_logo.png" style="width:115px;height:100px;">
+						</span>
+						<h3>Rust</h3>
+						<p>Once again, I didn't even know that Rust-lang existed, forget about RegEx. Youtube Tutorials and the official docs came in handy.</p>
+					</section>
+				</div>
+				<div class="features-row">
+					<section>
+							<span class="center" ><<img src="https://img.icons8.com/ios/100/000000/placeholder-thumbnail-xml.png" style="width:90px;height:90px;"  >
+							</span>
+						<h3>Web</h3>
+						<p>I had zero knowledge about HTML and JS, w3schools and Youtube tutorials kept me from drowning. </p>
+					</section>
+					<section>
+							<span class="center" ><img src="https://img.icons8.com/dusk/128/000000/python.png"  style="width:100px;height:100px;"  >
+							</span>
+							
+						<h3>Python</h3>
+						<p>The Hackerrank and Codeforces problems brushed up my basic problem solving skills. Captcha breaking was fun, the Tesseract OCR engine came in handy. Solving Reverse-me wasn't easy though, it took me 1 whole hour to understand what a XOR gate exactly is. </p>
+					</section>
+				</div>
+			</section>
+
+
+
+
+
+
+
+
+			<section class="box special features">
+					<div class="features-row">
+						<section>
+							
+							<span class="center" ><img src="images/graphql_logo.jpg"  style="width:100px;height:100px;"  >
+							</span>
+							<h3>GitHub_GraphQL</h3>
+							<p>GraphQL was completely new to me. The learning curve was a bit steep in this case. GraphiQL(in-browser tool) came in handy for  validating and testing GraphQL queries.</p>
+						</section>
+						<section>
+							<span class="center"> <img src="images/Euler_logo.jpg" style="width:140px;height:100px;">
+							</span>
+							<h3>Project_Euler</h3>
+							<p>The logic was easy to  grasp, but handling the corner cases(especially when the  test cases were hidden) was a pain. Code performance was also a major factor. I 
+									was unable to fix the timeout issue for problem_1 and problem_4.</p>
+						</section>
+					</div>
+					<div class="features-row">
+						<section>
+								<span class="center" ><<img src="images/Bandit2.png" style="width:180px;height:110px;"  >
+								</span>
+							<h3>Bandit - OverTheWire</h3>
+							<p>Thanks to this task, I now have a fairly good grip over linux commands.</p>
+						</section>
+						<section>
+								<span class="center" ><img src="images/Golang_dog_thing4.png"  style="width:120px;height:120px;"  >
+								</span>
+								
+							<h3>Go-lang</h3>
+							<p>At this point I already knew how to handle alien languages, thanks to the fact that I was already done with the Rust and Ruby tasks.<br/> <br/> Reading the docs and a bit of Googling did the trick for me.</p>
+						</section>
+					</div>
 				</section>
+
+
+
+
+
+
+
+
 
 			<!-- Main -->
 				<section id="main" class="container">
+					<header>
+						<h2>Facial Expression Classifier</h2>
+						<p>Using Keras.</p>
 
-					<section class="box special">
-						<header class="major">
-							<h2>I started coding because everybody around me was doing so,
-							<br />
-							but then I fell in love with it.</h2>
-							<p>This page showcases the stuff I did for the past few months.</p>
-						</header>
-						<span class="image featured"><img src="images/banner3.jpg" style="height:310px;alt="" /></span>
-					</section>
+						<ul class="actions special">
+							<li><a href="https://github.com/Mainakdeb/Facial_Expression_Classification" class="button alt">Repo</a></li>
+						</ul>
 
-
-
-				<section class="box special">
-					<header class="major">
-						<h2>The amFOSS tasks</h2>
-						<p>The amFOSS tasks forced me to go beyond my comfort zone, <br/>they taught me to teach myself.</p>
 					</header>
-					
+					<div class="box special">
+						<span class="center"><img src="images/pic02.jpg" style="width:500px;height:220px;"  alt="" /></span>
+						<h3>The Approach</h3>
+						<p>Finding the right dataset was my first goal. After a bit of googling, I stumbled upon the FER-2013 dataset on kaggle. The data consists of 48x48 pixel grayscale images of faces which belonged to the following classes: <li>Angry</li><li>Disguist</li><li>Fear</li><li>Happy</li><li>Sad</li><li>Surprise</li><li>Neutral</li> The faces have been automatically registered so that the face is more or less centered and occupies about the same amount of space in each image. I used OpenCV’s Haar cascades to detect and extract the facial region from the webcam video feed and then display the corresponding emoji (one of 7 classes) depending on the output from the trained model.</p>
+						<div class="row">
+							<div class="row-6 row-12-mobilep">
+								<h3>Hurdles Faced</h3>
+								<p>The first hurdle was the training time. My laptop was taking around 2 minutes for a single training epoch, I tried using colab and it was way faster (17 seconds per epoch). The accuracy was around 45 but I kept making changes which finally improved the accuracy to 67%. I was able to successfully pass images through the model but using direct video feed from the webcam was a challenge. I used two seperate matplotlib windows, one as a monitor, another displaying the output in form of an emoji. </p>
+							</div>
+							<div class="row-6 row-12-mobilep">
+								<h3>Things I learnt</h3>
+								<p>I learnt to use OpenCV’s Haar cascades to detect faces which aided the cropping mechanism. I also figured out how to refresh matplotlib plots depending on the output from the trained model. I learnt how to implement webcam input in Python using CV2 which will surely come in handy on other computer-vision related tasks.</p>
+							</div>
+						</div>
+					</div>
 				</section>
 
 
-					<section class="box special features">
-						<div class="features-row">
-							<section>
+
+
+
+				<section id="main" class="container">
+					<header>
+						<h2>The Wine-quality dataset :</h2>
+						<p>Quality prediction of red-wine using deep-learning.</p>
+
+						<ul class="actions special">
+							<li><a href="https://github.com/Mainakdeb/Wine_Quality_Prediction" class="button alt">Repo</a></li>
+						</ul>
+
+
+					</header>
+					<div class="box special">
+						<span class="center"><img src="images/wine_cat.jpg" style="width:340px;height:250px;"  alt="" /></span>
+						<h3>The Approach</h3>
+						<p>The aim is to train a model to predict the quality of red-wine using chemical properties such as pH, density, alcohol percentage etc.
+							The dataset contains 12 columns, 11 of which describe the chemical properties of wine,
+							the last column corresponds to its quality. The quality of wine is directly correlated to its chemical composition,
+							these chemical attributes can be used to train a deep learning model to predict its quality. There were no categorical attributes and no null values in the data. The pre-processing involved: <li>Converting all values to float</li><li>Scaling the values using the MinMaxScaler.</li><li>Splitting the data into training, test and validation sets.</li><li>Converting all arrays into torch.Tensor.</li> </p>
+							<div class="row">
+							<div class="row-6 row-12-mobilep">
+								<h3>Hurdles Faced</h3>
+								<p>The accuracy values were very low  (around 50) in the first few attempts. The batch size was too low which I didn't notice.  Another major factor is that the data is extremely unbalanced. For example there are 681 instances of the quality '5',  199 instances of '7' and only 10 instances of '3'. I'll try to use SMOTE (Synthetic Minority Oversampling Technique) which generates virtual training records by linear interpolation for the minority class. These synthetic training records are generated by randomly selecting one or more of the k-nearest neighbors for each example in the minority class.</p>
+							</div>
+							<div class="row-6 row-12-mobilep">
+								<h3>Things I learnt</h3>
+								<p>I learnt to use learning rate schedulers from the torch.optim package (from PyTorch), which improved the accuracy by around 20%.<br/> The current accuracy is 72%, I'm sure that balancing the classes will improve the accuracy.</p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+
+
+
+
+				<section id="main" class="container">
+					<header>
+						<h2>Exploring CIFAR-10</h2>
+						<p>RGB Image Classification using PyTorch. </p>
+
+						<ul class="actions special">
+							<li><a href="https://github.com/Mainakdeb/Exploring_CIFAR_10" class="button alt">Repo</a></li>
+						</ul>
+
+
+					</header>
+					<div class="box special">
+						<span class="center"><img src="images/cifar.jpg" style="width:500px;height:450px;"  alt="" /></span>
+						<h3>The Approach</h3>
+						<p>I downloaded the raw jpeg format on purpose to get comfortable with handling RGB-image datasets. The dataset consists of 60,000 32x32x3 (RGB) images in 10 classes, with 6,000 images per class. There are 50,000 training images (5,000 per class) and 10,000 test images. <br>I used a custom Augmentor pipeline which augmented training images (rotate, mirror, and zoom) randomly while training .  </p>
+
+			
+						<div class="row">
+							<div class="row-6 row-12-mobilep">
+								<h3>Hurdles Faced</h3>
+								<p>I had worked with black-and-white image datasets before, this was the first time I was handling RGB images. Getting the augmentor pipeline to work was a pain. Building the training loop also required some effort. </p>
+							</div>
+							<div class="row-6 row-12-mobilep">
+								<h3>Things I learnt</h3>
 								
-								<span class="center" ><img src="https://img.icons8.com/color/128/000000/ruby-programming-language.png"  style="width:100px;height:100px;"  >
-								</span>
-								<h3>Ruby</h3>
-								<p>Ruby was completely alien to me. Google was my only friend. The syntax was easy to grasp. I faced tons of errors but StackOverflow had my back.</p>
-							</section>
-							<section>
-								<span class="center"> <img src="images/Rust_logo.png" style="width:115px;height:100px;">
-								</span>
-								<h3>Rust</h3>
-								<p>Once again, I didn't even know that Rust-lang existed, forget about RegEx. Youtube Tutorials and the official docs came in handy.</p>
-							</section>
+								<p>I learnt augment RGB images and devised a checkpoint mechanism (during training) to prevent training multiple times. This knowledge will surely help if I encounter another RGB image dataset in the future. </p>	
+
+
+									</div>
 						</div>
-						<div class="features-row">
-							<section>
-									<span class="center" ><<img src="https://img.icons8.com/ios/100/000000/placeholder-thumbnail-xml.png" style="width:90px;height:90px;"  >
-									</span>
-								<h3>Web</h3>
-								<p>I had zero knowledge about HTML and JS, w3schools and Youtube tutorials kept me from drowning. </p>
-							</section>
-							<section>
-									<span class="center" ><img src="https://img.icons8.com/dusk/128/000000/python.png"  style="width:100px;height:100px;"  >
-									</span>
-									
-								<h3>Python</h3>
-								<p>The Hackerrank and Codeforces problems brushed up my basic problem solving skills. Captcha breaking was fun, the Tesseract OCR engine came in handy. Solving Reverse-me wasn't easy though, it took me 1 whole hour to understand what a XOR gate exactly is. </p>
-							</section>
-						</div>
-					</section>
-
-
-
-
-
-
-
-
-					<section class="box special features">
-							<div class="features-row">
-								<section>
-									
-									<span class="center" ><img src="images/graphql_logo.jpg"  style="width:100px;height:100px;"  >
-									</span>
-									<h3>GitHub_GraphQL</h3>
-									<p>GraphQL was completely new to me. The learning curve was a bit steep in this case. GraphiQL(in-browser tool) came in handy for  validating and testing GraphQL queries.</p>
-								</section>
-								<section>
-									<span class="center"> <img src="images/Euler_logo.jpg" style="width:140px;height:100px;">
-									</span>
-									<h3>Project_Euler</h3>
-									<p>The logic was easy to  grasp, but handling the corner cases(especially when the  test cases were hidden) was a pain. Code performance was also a major factor. I 
-											was unable to fix the timeout issue for problem_1 and problem_4.</p>
-								</section>
-							</div>
-							<div class="features-row">
-								<section>
-										<span class="center" ><<img src="images/Bandit2.png" style="width:180px;height:110px;"  >
-										</span>
-									<h3>Bandit - OverTheWire</h3>
-									<p>Thanks to this task, I now have a fairly good grip over linux commands.</p>
-								</section>
-								<section>
-										<span class="center" ><img src="images/Golang_dog_thing4.png"  style="width:120px;height:120px;"  >
-										</span>
-										
-									<h3>Go-lang</h3>
-									<p>At this point I already knew how to handle alien languages, thanks to the fact that I was already done with the Rust and Ruby tasks.<br/> <br/> Reading the docs and a bit of Googling did the trick for me.</p>
-								</section>
-							</div>
-						</section>
-
-
-
-						<section class="box special">
-							<header class="major">
-								<h2>The Project :</br> Facial expression classifier.</h2>
-								<p>The Goal was to train a deep learning model to classify facial expressions. <br/> </p>
-
-								<span class="center"><img src="images/pic02.jpg" style="width:500px;height:220px;"  alt="" /></span>
-
-								<p>This uses OpenCV’s Haar cascades to detect and extract the facial region from the </br>webcam video feed and then displays the corresponding emoji (one of 7 classes) </br>depending on the output from the trained model.</p>
-								<ul class="actions special">
-									<li><a href="https://github.com/Mainakdeb/Facial_Expression_Classification" class="button alt">Repo</a></li>
-								</ul>
-
-
-
-							</header>
-							
-						</section>
-
-
-
-
-						
-						<section class="box special">
-							<header class="major">
-								<h2>The Kaggle Dataset : <br>Sale Price prediction of houses in Ames, Iowa</h2>
-								<p>A real estate agent might be able to do this based on intuition and experience, <br/> but a computer – lacking both – might just accomplish the same.</p>
-
-								<span class="center"><img src="images/house.jpg" style="width:500px;height:250px;"  alt="" /></span>
-
-								<p> The data contained 81 columns, each describing a feature of the property like building type, <br>size, no. of fireplaces, neighborhood etc.  The aim was to train a model to predict the sale price<br> of houses based on the given parameters. I learnt a a lot about data pre-processing,<br> deciding which features to keep and which ones to drop, handling categorical values etc.</p>
-								<ul class="actions special">
-									<li><a href="https://github.com/Mainakdeb/Deep_Real_Estate_Agent" class="button alt">Repo</a></li>
-								</ul>
-
-							</header>
-							
-						</section>
-
-
-
-
-						<section class="box special">
-							<header class="major">
-								<h2>The Wine-quality dataset : <br>Prediction of wine quality</h2>
-								<p>A wine critic is a person who evaluates wine and describes it with a numerical rating. What if we could train a computer to do the same?  </p>
-
-								<span class="center"><img src="images/wine_cat.jpg" style="width:320px;height:250px;"  alt="" /></span>
-
-								<p> The dataset contains 12 columns, 11 of which describe the chemical properties of wine,<br/> the last column corresponds to its quality. The quality of wine is directly correlated to its chemical composition, <br/>these chemical attributes can be used to train a deep learning model to predict its quality.</p>
-								<ul class="actions special">
-									<li><a href="https://github.com/Mainakdeb/Wine_Quality_Prediction" class="button alt">Repo</a></li>
-								</ul>
-
-							</header>
-							
-						</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-			<!-- CTA -->
-				<section id="cta">
-
-					<h3>What next?<br/>
-					I'll continue my journey with Data science and Deep Learning.<br/></h3>
-					<h3></h3>
-
-					<form>
-						<div class="row gtr-50 gtr-uniform">
-							<div class="col-8 col-12-mobilep">
-							</div>
-							<div class="col-4 col-12-mobilep">
-							</div>
-						</div>
-					</form>
-
+					</div>
 				</section>
+				
 
-			<!-- Footer -->
-				<footer id="footer">
-					<ul class="icons">
-						<li><a href="https://github.com/Mainakdeb" class="icon brands fa-github"><span class="label">Github</span></a></li>
-					</ul>
-					<ul class="copyright">
-						<li><a href="https://github.com/Mainakdeb">Github.</a></li>
-					</ul>
-				</footer>
 
+				<section id="main" class="container">
+					<header>
+						<h2>The Fashion MNIST Dataset</h2>
+						<p>Classifying images of Fashion articles.</p>
+
+						<ul class="actions special">
+							<li><a href="https://github.com/Mainakdeb/PyTorch_Deepdive/tree/master/Zalando_Research_dataset" class="button alt">Repo</a></li>
+						</ul>
+
+
+					</header>
+					<div class="box special">
+						<span class="center"><img src="images/fashion.jpg" style="width:500px;height:450px;"  alt="" /></span>
+						<h3>The Approach</h3>
+						<p>Zalando SE is a European e-commerce company based in Berlin, Germany. Fashion-MNIST is a dataset of Zalando's article images consisting of a training set of 60,000 labled examples. I was watching online lectures and was implementing whatever I learnt on this dataset.</a>
+
+						</p>
+			
+						<div class="row">
+							<div class="row-6 row-12-mobilep">
+								<h3>Hurdles Faced</h3>
+								<p>This was the first time I was using the PyTorch library, so the whole thing was a hurdle for me. The online tutorials and the docs kept me from drowning. </p>
+							</div>
+							<div class="row-6 row-12-mobilep">
+								<h3>Things I learnt</h3>
+								
+								<p>I learnt basic stuff like passing a single image through a trained model, basic image processing, augmentation etc. Later, these skills turned out to be super handy. </p>	
+
+
+									</div>
+						</div>
+					</div>
+				</section>
+				
+
+
+
+
+
+
+
+
+
+<!-- CTA -->
+<section id="cta">
+
+	<h3>What next?<br/>
+	I'll continue my journey with Data science and Deep Learning.<br/></h3>
+	<h3></h3>
+
+	<form>
+		<div class="row gtr-50 gtr-uniform">
+			<div class="col-8 col-12-mobilep">
+			</div>
+			<div class="col-4 col-12-mobilep">
+			</div>
 		</div>
+	</form>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+</section>
 
-	</body>
+<!-- Footer -->
+<footer id="footer">
+	<ul class="icons">
+		<li><a href="https://github.com/Mainakdeb" class="icon brands fa-github"><span class="label">Github</span></a></li>
+	</ul>
+	<ul class="copyright">
+		<li><a href="https://github.com/Mainakdeb">Github.</a></li>
+	</ul>
+</footer>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.dropotron.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
 </html>
