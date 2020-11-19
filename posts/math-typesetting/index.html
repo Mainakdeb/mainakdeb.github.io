@@ -2,13 +2,12 @@
 
 <html lang="en-us">
     <head>
-	<meta name="generator" content="Hugo 0.78.2" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no"/>
 
-    <title>Noteworthy</title>
+    <title>Math Typesetting | Noteworthy</title>
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,8 +28,6 @@
     
     
  
-    
-    <link rel="alternate" type="application/rss+xml" href="https://example.com/index.xml" title="Noteworthy" />
     </head>
 
     <body>
@@ -152,73 +149,52 @@
 
         <div id="content" class="content-container">
         
-<div class = "article-content">
-        
-        <div class="description">
-            <p>Hello, This is Mainaks blog</p>
-        </div>
-        
-        
-        
-        
-        <article>
-            <h2>
-                <a href="https://example.com/posts/markdown-syntax/">
-                    Markdown Syntax
-                </a>
-            </h2>
-            <div>
-                <p><p>This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.</p></p>
-                
-            </div>
-            <div class="post-footer">
-            <time>January 24, 2020</time>
 
-            
-            
-                
-                    <a class="tag" href="/tags/markdown">#markdown</a>
-                
-                    <a class="tag" href="/tags/css">#css</a>
-                
-                    <a class="tag" href="/tags/html">#html</a>
-                
-                    <a class="tag" href="/tags/themes">#themes</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://example.com/posts/emoji-support/">
-                    Emoji Support
-                </a>
-            </h2>
-            <div>
-                <p>Emoji can be enabled in a Hugo project in a number of ways.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>December 3, 2019</time>
+<h1 class="post-title">Math Typesetting</h1>
+    
+    <time>December 12, 2019</time>
+    
+    <div>
+        <p>
+        <p>Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.</p>
 
-            
-            
-                
-                    <a class="tag" href="/tags/emoji">#emoji</a>
-                
-            
-            </div> 
-           
-        </article>
+<p>In this example we will be using <a href="https://katex.org/">KaTeX</a></p>
+
+<ul>
+<li>Create a partial under <code>/layouts/partials/math.html</code></li>
+<li>Within this partial reference the <a href="https://katex.org/docs/autorender.html">Auto-render Extension</a> or host these scripts locally.</li>
+<li>Include the partial in your templates like so:<br></li>
+</ul>
+<pre><code>{{ if or .Params.math .Site.Params.math }}
+{{ partial &#34;math.html&#34; . }}
+{{ end }}</code></pre>
+<ul>
+<li>To enable KaTex globally set the parameter <code>math</code> to <code>true</code> in a project's configuration</li>
+<li>To enable KaTex on a per page basis include the parameter <code>math: true</code> in content files.</li>
+</ul>
+
+<p><strong>Note:</strong> Use the online reference of <a href="https://katex.org/docs/supported.html">Supported TeX Functions</a></p>
+
+<h3 id="examples">Examples</h3>
+
+<p>Inline math: <span  class="math">\( \varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887… \)</span></p>
+
+<p>Block math:</p>
+
+<p><span  class="math">\[
+ \varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } } 
+\]</span></p>
+
+        </p>
+    </div>
+    
+
+    
+
+    <div class="page-footer">
         
     </div>
-        
-        <div class="paginator">
-        
-        
-    </div>
+
 
         
 
