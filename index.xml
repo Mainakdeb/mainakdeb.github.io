@@ -5,7 +5,18 @@
     <link>https://mainakdeb.github.io/</link>
     <description>Recent content on @mainakdeb</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 20 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://mainakdeb.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 21 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://mainakdeb.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Experimenting With GANs</title>
+      <link>https://mainakdeb.github.io/posts/experimenting-with-gans/</link>
+      <pubDate>Sat, 21 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://mainakdeb.github.io/posts/experimenting-with-gans/</guid>
+      <description>This gif showcases generated samples from a GAN trained on the MNIST dataset. Link to project repository.
+Background : Last saturday, I was browsing YouTube on my phone when the algorithm suggested me a video on GANs by Computerphile. Until that point I had a vague idea of what GANs were, mostly derived from conversations with my brother, but I didn&amp;rsquo;t really know how they worked.
+Anyways, I watched the whole video and was heavily impressed by the whole notion of making computers generate new real-looking data.</description>
+    </item>
+    
     <item>
       <title>How Did I Create This Blog ?</title>
       <link>https://mainakdeb.github.io/posts/how-did-i-create-this-blog-/</link>

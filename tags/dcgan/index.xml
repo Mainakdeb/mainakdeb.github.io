@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DCGAN on @mainakdeb</title>
+    <link>https://mainakdeb.github.io/tags/dcgan/</link>
+    <description>Recent content in DCGAN on @mainakdeb</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 21 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://mainakdeb.github.io/tags/dcgan/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Experimenting With GANs</title>
+      <link>https://mainakdeb.github.io/posts/experimenting-with-gans/</link>
+      <pubDate>Sat, 21 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://mainakdeb.github.io/posts/experimenting-with-gans/</guid>
+      <description>This gif showcases generated samples from a GAN trained on the MNIST dataset. Link to project repository.
+Background : Last saturday, I was browsing YouTube on my phone when the algorithm suggested me a video on GANs by Computerphile. Until that point I had a vague idea of what GANs were, mostly derived from conversations with my brother, but I didn&amp;rsquo;t really know how they worked.
+Anyways, I watched the whole video and was heavily impressed by the whole notion of making computers generate new real-looking data.</description>
+    </item>
+    
+  </channel>
+</rss>
