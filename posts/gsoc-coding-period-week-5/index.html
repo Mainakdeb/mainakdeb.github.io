@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
   <head>
-    <title>GSoC - Coding Period Week 4 // @mainakdeb</title>
+    <title>GSoC - Coding Period Week 5 // @mainakdeb</title>
     <link rel="shortcut icon" href="/favicon.ico" />
     <meta charset="utf-8" />
     <meta name="generator" content="Hugo 0.68.3" />
@@ -12,19 +12,15 @@
 
     
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="GSoC - Coding Period Week 4"/>
-<meta name="twitter:description" content="Most of my time this week was spent on building the training pipeline for the proposed cell nucleus segmentation model in C. elegans embryos.
-Work Done This Week (June 28th to July 4th)   Back in week-1, I had worked on preprocessing data from the cell-tracking-challenge dataset. The dataset was extracted from .tif files and saved as pairs of .png files.
-  To prevent anu CPU bottlenecks while training, I used PIL to resize all the training images to 1x256x256 beforehand."/>
+<meta name="twitter:title" content="GSoC - Coding Period Week 5"/>
+<meta name="twitter:description" content="Work Done This Week (July 5th to July 12th)  Refactored the training loop for the nucleus segentation model, this enabled faster prototyping and experimentation. Integrated Optuna for automated hyperparameter optimization. Ran 200 optuna trials to find training hyperparams. Optuna samples hyperparams from a given range, which in this case was -  Learning rate: 0.5e-3 to 20e-3 Batch Size: 8 to 64   Each trial trained the model on 10% of available data for 3 epochs, and returned the resulting IOU score."/>
 
-    <meta property="og:title" content="GSoC - Coding Period Week 4" />
-<meta property="og:description" content="Most of my time this week was spent on building the training pipeline for the proposed cell nucleus segmentation model in C. elegans embryos.
-Work Done This Week (June 28th to July 4th)   Back in week-1, I had worked on preprocessing data from the cell-tracking-challenge dataset. The dataset was extracted from .tif files and saved as pairs of .png files.
-  To prevent anu CPU bottlenecks while training, I used PIL to resize all the training images to 1x256x256 beforehand." />
+    <meta property="og:title" content="GSoC - Coding Period Week 5" />
+<meta property="og:description" content="Work Done This Week (July 5th to July 12th)  Refactored the training loop for the nucleus segentation model, this enabled faster prototyping and experimentation. Integrated Optuna for automated hyperparameter optimization. Ran 200 optuna trials to find training hyperparams. Optuna samples hyperparams from a given range, which in this case was -  Learning rate: 0.5e-3 to 20e-3 Batch Size: 8 to 64   Each trial trained the model on 10% of available data for 3 epochs, and returned the resulting IOU score." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://mainakdeb.github.io/posts/gsoc-coding-period-week-4/" />
-<meta property="article:published_time" content="2021-07-05T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-07-05T00:00:00+00:00" />
+<meta property="og:url" content="https://mainakdeb.github.io/posts/gsoc-coding-period-week-5/" />
+<meta property="article:published_time" content="2021-07-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-07-12T00:00:00+00:00" />
 
 
   </head>
@@ -58,21 +54,21 @@ Work Done This Week (June 28th to July 4th)   Back in week-1, I had worked on pr
       
   <article class="post">
     <header class="post-header">
-      <h1 class ="post-title">GSoC - Coding Period Week 4</h1>
+      <h1 class ="post-title">GSoC - Coding Period Week 5</h1>
       <div class="post-meta">
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
   <title>calendar</title>
   <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
 </svg>
-          Jul 5, 2021
+          Jul 12, 2021
         </div>
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
   <title>clock</title>
   <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
 </svg>
-          2 min read
+          1 min read
         </div>
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
@@ -85,54 +81,54 @@ Work Done This Week (June 28th to July 4th)   Back in week-1, I had worked on pr
       </div>
     </header>
     <div class="post-content">
-      <p>Most of my time this week was spent on building the training pipeline for the proposed cell nucleus segmentation model in C. elegans embryos.</p>
-<h2 id="work-done-this-week-june-28th-to-july-4th">Work Done This Week (June 28th to July 4th)</h2>
+      <h2 id="work-done-this-week-july-5th-to-july-12th">Work Done This Week (July 5th to July 12th)</h2>
+<ul>
+<li>Refactored the training loop for the nucleus segentation model, this enabled faster prototyping and experimentation.</li>
+<li>Integrated Optuna for automated hyperparameter optimization. Ran 200 optuna trials to find training hyperparams.</li>
+<li>Optuna samples hyperparams from a given range, which in this case was -
+<ul>
+<li>Learning rate: 0.5e-3 to 20e-3</li>
+<li>Batch Size: 8 to 64</li>
+</ul>
+</li>
+<li>Each trial trained the model on 10% of available data for 3 epochs, and returned the resulting IOU score.</li>
+<li>The hyperparams from the best optuna trial is shown in the image below</li>
+</ul>
+<p><img src="../images/gsoc-coding-period-week-5/best_params.png" alt=""></p>
 <ul>
 <li>
-<p>Back in <a href="https://mainakdeb.github.io/posts/gsoc-coding-period-week-1/">week-1</a>, I had worked on preprocessing data from the cell-tracking-challenge dataset. The dataset was extracted from <code>.tif</code> files and saved as pairs of <code>.png</code> files.</p>
-</li>
-<li>
-<p>To prevent anu CPU bottlenecks while training, I used PIL to resize all the training images to 1x256x256 beforehand.</p>
-</li>
-<li>
-<p>Defined a custom Dataset class for the data, this class uses a csv file that contains image id&rsquo;s, which are being used to identify feature-label pairs.</p>
-</li>
-<li>
-<p>Used Albumentations to define the image augmentation pipeline. Also defined a new class to add gaussian noise in training images (inputs only). The image below shows feature-label pairs from the training data, notice that one of the input images contains a lot more noise.</p>
-<p><img src="../images/gsoc-coding-period-week-4/training_data.png" alt=""></p>
-</li>
-<li>
-<p>Ran some tests to ensure that the dataloader works properly, plotted some feature-label pairs for visual inspection.</p>
-</li>
-<li>
-<p>Defined the network:</p>
+<p>As a recap, the model details are :</p>
 <ul>
 <li>Type - Feature Pyramid Network</li>
 <li>Backbone - ResNet-18</li>
 </ul>
 </li>
 <li>
-<p>Defined a rough training loop and trained the model for a couple epochs as a test. The image below showcases the metrics for the 2 epoch test-run. The IOU score is close to 79 after the 2nd epoch, which is not bad.</p>
-<p><img src="../images/gsoc-coding-period-week-4/train_metrics_2_epochs.png" alt=""></p>
-<p><img src="../images/gsoc-coding-period-week-4/inference_2_epochs.png" alt=""></p>
+<p>Trained the model for 50 epochs, the training metrics are showcased below.</p>
 </li>
-<li>
-<p>Feel free to check out this work:</p>
+</ul>
+<p><img src="../images/gsoc-coding-period-week-5/train_metrics.png" alt=""></p>
 <ul>
-<li>Github - <a href="https://github.com/Mainakdeb/GSoC-2021/blob/1cbe0e8429671491168f3cceaa602d5953e85df3/cell-nucleus-segmentation/train_segmentation_model.ipynb">Link</a></li>
-<li>NBViewer - <a href="https://nbviewer.jupyter.org/github/Mainakdeb/GSoC-2021/blob/1cbe0e8429671491168f3cceaa602d5953e85df3/cell-nucleus-segmentation/train_segmentation_model.ipynb">Link</a></li>
+<li>The model seems to perform well, even when the inputs are super noisy/underexposed. The GIF below shows model predictions on 2D slices of 3D data at one point in time.</li>
+</ul>
+<p><img src="../images/gsoc-coding-period-week-5/slices.gif" alt=""></p>
+<ul>
+<li>More inference examples:</li>
+</ul>
+<p><img src="../images/gsoc-coding-period-week-5/infer_collage_nuc_seg.png" alt=""></p>
+<ul>
+<li>Feel free to check out this work:
+<ul>
+<li>Github - <a href="https://github.com/Mainakdeb/GSoC-2021/blob/main/cell-nucleus-segmentation/train_segmentation_model.ipynb">Link</a></li>
+<li>NBViewer - <a href="https://nbviewer.jupyter.org/github/Mainakdeb/GSoC-2021/blob/main/cell-nucleus-segmentation/train_segmentation_model.ipynb">Link</a></li>
 </ul>
 </li>
 </ul>
 <h2 id="planned">Planned:</h2>
 <ul>
-<li>Continue working on the nucleus segmentation model.
-<ul>
-<li>Use Optuna to find suitable hyperparameters.</li>
-<li>Experiment with mixed precision training and inference.</li>
-<li>Build and deploy a GUI after training the model.</li>
-</ul>
-</li>
+<li>Build a GUI for the online demo.</li>
+<li>Add this model to the DevoLearn library.</li>
+<li>Swap out the existing DevoLearn cell membrane segmentation model with the new upgraded model.</li>
 </ul>
 
     </div>
