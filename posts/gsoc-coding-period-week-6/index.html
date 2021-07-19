@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
   <head>
-    <title>GSoC - Coding Period Week 5 // @mainakdeb</title>
+    <title>GSoC - Coding Period Week 6 // @mainakdeb</title>
     <link rel="shortcut icon" href="/favicon.ico" />
     <meta charset="utf-8" />
     <meta name="generator" content="Hugo 0.68.3" />
@@ -12,15 +12,17 @@
 
     
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="GSoC - Coding Period Week 5"/>
-<meta name="twitter:description" content="Work Done This Week (July 5th to July 12th)  Refactored the training loop for the nucleus segentation model, this enabled faster prototyping and experimentation. Integrated Optuna for automated hyperparameter optimization. Ran 200 optuna trials to find training hyperparams. Optuna samples hyperparams from a given range, which in this case was -  Learning rate: 0.5e-3 to 20e-3 Batch Size: 8 to 64   Each trial trained the model on 10% of available data for 3 epochs, and returned the resulting IOU score."/>
+<meta name="twitter:title" content="GSoC - Coding Period Week 6"/>
+<meta name="twitter:description" content="Work Done This Week (July 12th to July 19th)  Swapped out the model for the Cell membrane segmentation with the upgraded model in DevoLearn&rsquo;s repository, ran tests locally before pushing because Travis has been discontinued. (Link to commit)    Renamed the embryo_segmentor package to cell_membrane_segmentor. The reason for this renaming is to avoid naming conflicts when new segmentation models are added. (Link to commit)
+ Old syntax - from devolearn import embryo_segmentor New syntax - from devolearn import cell_membrane_segmentor    Integrated the new nucleus segmentation model into the library (Link to commit)"/>
 
-    <meta property="og:title" content="GSoC - Coding Period Week 5" />
-<meta property="og:description" content="Work Done This Week (July 5th to July 12th)  Refactored the training loop for the nucleus segentation model, this enabled faster prototyping and experimentation. Integrated Optuna for automated hyperparameter optimization. Ran 200 optuna trials to find training hyperparams. Optuna samples hyperparams from a given range, which in this case was -  Learning rate: 0.5e-3 to 20e-3 Batch Size: 8 to 64   Each trial trained the model on 10% of available data for 3 epochs, and returned the resulting IOU score." />
+    <meta property="og:title" content="GSoC - Coding Period Week 6" />
+<meta property="og:description" content="Work Done This Week (July 12th to July 19th)  Swapped out the model for the Cell membrane segmentation with the upgraded model in DevoLearn&rsquo;s repository, ran tests locally before pushing because Travis has been discontinued. (Link to commit)    Renamed the embryo_segmentor package to cell_membrane_segmentor. The reason for this renaming is to avoid naming conflicts when new segmentation models are added. (Link to commit)
+ Old syntax - from devolearn import embryo_segmentor New syntax - from devolearn import cell_membrane_segmentor    Integrated the new nucleus segmentation model into the library (Link to commit)" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://mainakdeb.github.io/posts/gsoc-coding-period-week-5/" />
-<meta property="article:published_time" content="2021-07-12T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-07-12T00:00:00+00:00" />
+<meta property="og:url" content="https://mainakdeb.github.io/posts/gsoc-coding-period-week-6/" />
+<meta property="article:published_time" content="2021-07-19T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-07-19T00:00:00+00:00" />
 
 
   </head>
@@ -54,14 +56,14 @@
       
   <article class="post">
     <header class="post-header">
-      <h1 class ="post-title">GSoC - Coding Period Week 5</h1>
+      <h1 class ="post-title">GSoC - Coding Period Week 6</h1>
       <div class="post-meta">
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
   <title>calendar</title>
   <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
 </svg>
-          Jul 12, 2021
+          Jul 19, 2021
         </div>
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
@@ -81,54 +83,51 @@
       </div>
     </header>
     <div class="post-content">
-      <h2 id="work-done-this-week-july-5th-to-july-12th">Work Done This Week (July 5th to July 12th)</h2>
+      <h2 id="work-done-this-week-july-12th-to-july-19th">Work Done This Week (July 12th to July 19th)</h2>
 <ul>
-<li>Refactored the training loop for the nucleus segentation model, this enabled faster prototyping and experimentation.</li>
-<li>Integrated Optuna for automated hyperparameter optimization. Ran 200 optuna trials to find training hyperparams.</li>
-<li>Optuna samples hyperparams from a given range, which in this case was -
-<ul>
-<li>Learning rate: 0.5e-3 to 20e-3</li>
-<li>Batch Size: 8 to 64</li>
+<li>Swapped out the model for the Cell membrane segmentation with the upgraded model in DevoLearn&rsquo;s repository, ran tests locally before pushing because Travis has been discontinued. (<a href="https://github.com/DevoLearn/devolearn/commit/e65b2f71f597fcfc1358f7fb44ea36e3e9fc9f3e">Link to commit</a>)</li>
 </ul>
-</li>
-<li>Each trial trained the model on 10% of available data for 3 epochs, and returned the resulting IOU score.</li>
-<li>The hyperparams from the best optuna trial is shown in the image below</li>
-</ul>
-<p><img src="../images/gsoc-coding-period-week-5/best_params.png" alt=""></p>
+<p><img src="../images/gsoc-coding-period-week-6/tests_local_3_models.png" alt=""></p>
 <ul>
 <li>
-<p>As a recap, the model details are :</p>
+<p>Renamed the <code>embryo_segmentor</code> package to <code>cell_membrane_segmentor</code>. The reason for this renaming is to avoid naming conflicts when new segmentation models are added. (<a href="https://github.com/DevoLearn/devolearn/commit/e2da9401d6712e7b0c6667ba803e50bda8e9457c">Link to commit</a>)</p>
 <ul>
-<li>Type - Feature Pyramid Network</li>
-<li>Backbone - ResNet-18</li>
+<li>Old syntax - <code>from devolearn import embryo_segmentor</code></li>
+<li>New syntax - <code>from devolearn import cell_membrane_segmentor</code></li>
 </ul>
 </li>
 <li>
-<p>Trained the model for 50 epochs, the training metrics are showcased below.</p>
+<p>Integrated the new nucleus segmentation model into the library (<a href="https://github.com/DevoLearn/devolearn/commit/bc59be395a68e4565ecde007426c778cc3f047ed">Link to commit</a>)</p>
+<ul>
+<li>Wrote the necessary functions to run inference, on CPU and GPU.</li>
+<li>Made additions to the testing script to accomodate this additional model.</li>
+<li>Steps for usage:
+<ol>
+<li><code>from devolearn import cell_nucleus_segmentor</code></li>
+<li><code>segmentor = cell_nucleus_segmentor(device='cuda')</code></li>
+<li><code>pred = segmentor.predict(image_path = &quot;input_image.png&quot;)</code></li>
+<li><code>plt.imshow(pred)</code></li>
+</ol>
 </li>
 </ul>
-<p><img src="../images/gsoc-coding-period-week-5/train_metrics.png" alt=""></p>
-<ul>
-<li>The model seems to perform well, even when the inputs are super noisy/underexposed. The GIF below shows model predictions on 2D slices of 3D data at one point in time.</li>
-</ul>
-<p><img src="../images/gsoc-coding-period-week-5/slices.gif" alt=""></p>
-<ul>
-<li>More inference examples:</li>
-</ul>
-<p><img src="../images/gsoc-coding-period-week-5/infer_collage_nuc_seg.png" alt=""></p>
-<ul>
-<li>Feel free to check out this work:
-<ul>
-<li>Github - <a href="https://github.com/Mainakdeb/GSoC-2021/blob/main/cell-nucleus-segmentation/train_segmentation_model.ipynb">Link</a></li>
-<li>NBViewer - <a href="https://nbviewer.jupyter.org/github/Mainakdeb/GSoC-2021/blob/main/cell-nucleus-segmentation/train_segmentation_model.ipynb">Link</a></li>
-</ul>
+</li>
+<li>
+<p>Inference Examples:</p>
+<ol>
+<li>Input image with Varying Z axis -</li>
+</ol>
+<p><img src="../images/gsoc-coding-period-week-6/z_infer.gif" alt=""></p>
+<ol start="2">
+<li>Inputs varying through time -</li>
+</ol>
+<p><img src="../images/gsoc-coding-period-week-6/time_infer.gif" alt=""></p>
 </li>
 </ul>
 <h2 id="planned">Planned:</h2>
 <ul>
-<li>Build a GUI for the online demo.</li>
-<li>Add this model to the DevoLearn library.</li>
-<li>Swap out the existing DevoLearn cell membrane segmentation model with the new upgraded model.</li>
+<li>Build a GUI for all DevoLearn models and host them online.</li>
+<li>Look into ways of running bulk inference using the web-GUI.</li>
+<li>Move from Travis CI to Github Actions.</li>
 </ul>
 
     </div>
