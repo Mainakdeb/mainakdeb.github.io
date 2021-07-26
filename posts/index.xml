@@ -5,10 +5,19 @@
     <link>https://mainakdeb.github.io/posts/</link>
     <description>Recent content in Posts on @mainakdeb</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 19 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 25 Jul 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://mainakdeb.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GSoC - Coding Period Week 7</title>
+      <link>https://mainakdeb.github.io/posts/gsoc-coding-period-week-7/</link>
+      <pubDate>Sun, 25 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mainakdeb.github.io/posts/gsoc-coding-period-week-7/</guid>
+      <description>Work Done This Week (July 20th to July 25th)  Converted the nucleus segmentation model into ONNX (Link to code) Began working on the DevoLearn GUI, this time using Streamlit, this would support multiple models on one web-app.  Built the pipeline to run inference using the ONNX models, ran tests to ensure the 2 segmentation models work via the GUI. The user will have the ability to select any of the DevoLearn models from the drop down menu to the left, then drag and drop inputs.</description>
+    </item>
     
     <item>
       <title>GSoC - Coding Period Week 6</title>
