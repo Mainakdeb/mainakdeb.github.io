@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>GANs on Mainak&#39;s blog</title>
-    <link>https://example.com/tags/gans/</link>
+    <link>https://mainakdeb.github.io/tags/gans/</link>
     <description>Recent content in GANs on Mainak&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 07 Dec 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://example.com/tags/gans/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mainakdeb.github.io/tags/gans/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>The Next Step - Conditional DCGANs</title>
-      <link>https://example.com/posts/conditional-dcgans/</link>
+      <link>https://mainakdeb.github.io/posts/conditional-dcgans/</link>
       <pubDate>Mon, 07 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/posts/conditional-dcgans/</guid>
+      <guid>https://mainakdeb.github.io/posts/conditional-dcgans/</guid>
       <description>GANs can generate real-looking samples, but can they be trained to generate conditioned samples?</description>
     </item>
     
     <item>
       <title>Experimenting With GANs</title>
-      <link>https://example.com/posts/experimenting-with-gans/</link>
+      <link>https://mainakdeb.github.io/posts/experimenting-with-gans/</link>
       <pubDate>Sat, 21 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/posts/experimenting-with-gans/</guid>
+      <guid>https://mainakdeb.github.io/posts/experimenting-with-gans/</guid>
       <description>This gif showcases generated samples from a GAN trained on the MNIST dataset.</description>
     </item>
     

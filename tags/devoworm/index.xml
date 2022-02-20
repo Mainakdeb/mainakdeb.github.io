@@ -2,102 +2,102 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DevoWorm on Mainak&#39;s blog</title>
-    <link>https://example.com/tags/devoworm/</link>
+    <link>https://mainakdeb.github.io/tags/devoworm/</link>
     <description>Recent content in DevoWorm on Mainak&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 09 Aug 2021 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://example.com/tags/devoworm/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mainakdeb.github.io/tags/devoworm/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>GSoC - Coding Period Week 9</title>
-      <link>https://example.com/posts/gsoc-coding-period-week-9/</link>
+      <link>https://mainakdeb.github.io/posts/gsoc-coding-period-week-9/</link>
       <pubDate>Mon, 09 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/posts/gsoc-coding-period-week-9/</guid>
+      <guid>https://mainakdeb.github.io/posts/gsoc-coding-period-week-9/</guid>
       <description>Work Done This Week (August 2nd to August 8th)   Replaced the static images on the DevoLearn web-app with interactive Plotly images, this will allow users to :</description>
     </item>
     
     <item>
       <title>GSoC - Coding Period Week 8</title>
-      <link>https://example.com/posts/gsoc-coding-period-week-8/</link>
+      <link>https://mainakdeb.github.io/posts/gsoc-coding-period-week-8/</link>
       <pubDate>Mon, 02 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/posts/gsoc-coding-period-week-8/</guid>
+      <guid>https://mainakdeb.github.io/posts/gsoc-coding-period-week-8/</guid>
       <description>Work Done This Week (July 26th to August 1st)   Converted the DevoLearn Lineage Population model into ONNX.</description>
     </item>
     
     <item>
       <title>GSoC - Coding Period Week 7</title>
-      <link>https://example.com/posts/gsoc-coding-period-week-7/</link>
+      <link>https://mainakdeb.github.io/posts/gsoc-coding-period-week-7/</link>
       <pubDate>Sun, 25 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/posts/gsoc-coding-period-week-7/</guid>
+      <guid>https://mainakdeb.github.io/posts/gsoc-coding-period-week-7/</guid>
       <description>Work Done This Week (July 20th to July 25th)  Converted the nucleus segmentation model into ONNX (Link to code) Began working on the DevoLearn GUI, this time using Streamlit, this would support multiple models on one web-app.</description>
     </item>
     
     <item>
       <title>GSoC - Coding Period Week 6</title>
-      <link>https://example.com/posts/gsoc-coding-period-week-6/</link>
+      <link>https://mainakdeb.github.io/posts/gsoc-coding-period-week-6/</link>
       <pubDate>Mon, 19 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/posts/gsoc-coding-period-week-6/</guid>
+      <guid>https://mainakdeb.github.io/posts/gsoc-coding-period-week-6/</guid>
       <description>Work Done This Week (July 12th to July 19th)  Swapped out the model for the Cell membrane segmentation with the upgraded model in DevoLearn&amp;rsquo;s repository, ran tests locally before pushing because Travis has been discontinued.</description>
     </item>
     
     <item>
       <title>GSoC - Coding Period Week 5</title>
-      <link>https://example.com/posts/gsoc-coding-period-week-5/</link>
+      <link>https://mainakdeb.github.io/posts/gsoc-coding-period-week-5/</link>
       <pubDate>Mon, 12 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/posts/gsoc-coding-period-week-5/</guid>
+      <guid>https://mainakdeb.github.io/posts/gsoc-coding-period-week-5/</guid>
       <description>Work Done This Week (July 5th to July 12th)  Refactored the training loop for the nucleus segentation model, this enabled faster prototyping and experimentation.</description>
     </item>
     
     <item>
       <title>GSoC - Coding Period Week 4</title>
-      <link>https://example.com/posts/gsoc-coding-period-week-4/</link>
+      <link>https://mainakdeb.github.io/posts/gsoc-coding-period-week-4/</link>
       <pubDate>Mon, 05 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/posts/gsoc-coding-period-week-4/</guid>
+      <guid>https://mainakdeb.github.io/posts/gsoc-coding-period-week-4/</guid>
       <description>Most of my time this week was spent on building the training pipeline for the proposed cell nucleus segmentation model in C.</description>
     </item>
     
     <item>
       <title>GSoC - Coding Period Week 3</title>
-      <link>https://example.com/posts/gsoc-coding-period-week-3/</link>
+      <link>https://mainakdeb.github.io/posts/gsoc-coding-period-week-3/</link>
       <pubDate>Mon, 28 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/posts/gsoc-coding-period-week-3/</guid>
+      <guid>https://mainakdeb.github.io/posts/gsoc-coding-period-week-3/</guid>
       <description>Work Done This Week (June 21st to June 27th)   Converted the upgraded segmentation model into ONNX format.</description>
     </item>
     
     <item>
       <title>GSoC - Coding Period Week 2</title>
-      <link>https://example.com/posts/gsoc-coding-period-week-2/</link>
+      <link>https://mainakdeb.github.io/posts/gsoc-coding-period-week-2/</link>
       <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/posts/gsoc-coding-period-week-2/</guid>
+      <guid>https://mainakdeb.github.io/posts/gsoc-coding-period-week-2/</guid>
       <description>The goal for this week was to upgrade the DevoLearn cell membrane segmentation model.</description>
     </item>
     
     <item>
       <title>GSoC - Coding Period Week 1</title>
-      <link>https://example.com/posts/gsoc-coding-period-week-1/</link>
+      <link>https://mainakdeb.github.io/posts/gsoc-coding-period-week-1/</link>
       <pubDate>Mon, 14 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/posts/gsoc-coding-period-week-1/</guid>
+      <guid>https://mainakdeb.github.io/posts/gsoc-coding-period-week-1/</guid>
       <description>This blog post showcases what I did last week and what I plan to do next.</description>
     </item>
     
     <item>
       <title>GSoC - Community Bonding</title>
-      <link>https://example.com/posts/gsoc-community-bonding/</link>
+      <link>https://mainakdeb.github.io/posts/gsoc-community-bonding/</link>
       <pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/posts/gsoc-community-bonding/</guid>
+      <guid>https://mainakdeb.github.io/posts/gsoc-community-bonding/</guid>
       <description>This blog post summary of what I&amp;rsquo;ve been doing this week and what I plan to do in the coming week.</description>
     </item>
     
