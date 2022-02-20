@@ -3,112 +3,146 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://mainakdeb.github.io/</loc>
+    <loc>https://example.com/tags/devoworm/</loc>
     <lastmod>2021-08-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mainakdeb.github.io/tags/devoworm/</loc>
+    <loc>https://example.com/tags/gsoc/</loc>
     <lastmod>2021-08-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mainakdeb.github.io/tags/gsoc/</loc>
+    <loc>https://example.com/posts/gsoc-coding-period-week-9/</loc>
     <lastmod>2021-08-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mainakdeb.github.io/posts/gsoc-coding-period-week-9/</loc>
+    <loc>https://example.com/posts/</loc>
     <lastmod>2021-08-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mainakdeb.github.io/posts/</loc>
+    <loc>https://example.com/tags/</loc>
     <lastmod>2021-08-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mainakdeb.github.io/tags/</loc>
-    <lastmod>2021-08-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mainakdeb.github.io/posts/gsoc-coding-period-week-8/</loc>
+    <loc>https://example.com/posts/gsoc-coding-period-week-8/</loc>
     <lastmod>2021-08-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mainakdeb.github.io/posts/gsoc-coding-period-week-7/</loc>
+    <loc>https://example.com/posts/gsoc-coding-period-week-7/</loc>
     <lastmod>2021-07-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mainakdeb.github.io/posts/gsoc-coding-period-week-6/</loc>
+    <loc>https://example.com/posts/gsoc-coding-period-week-6/</loc>
     <lastmod>2021-07-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mainakdeb.github.io/posts/gsoc-coding-period-week-5/</loc>
+    <loc>https://example.com/posts/gsoc-coding-period-week-5/</loc>
     <lastmod>2021-07-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mainakdeb.github.io/posts/gsoc-coding-period-week-4/</loc>
+    <loc>https://example.com/posts/gsoc-coding-period-week-4/</loc>
     <lastmod>2021-07-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mainakdeb.github.io/posts/gsoc-coding-period-week-3/</loc>
+    <loc>https://example.com/posts/gsoc-coding-period-week-3/</loc>
     <lastmod>2021-06-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mainakdeb.github.io/posts/gsoc-coding-period-week-2/</loc>
+    <loc>https://example.com/posts/gsoc-coding-period-week-2/</loc>
     <lastmod>2021-06-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mainakdeb.github.io/posts/gsoc-coding-period-week-1/</loc>
+    <loc>https://example.com/posts/gsoc-coding-period-week-1/</loc>
     <lastmod>2021-06-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mainakdeb.github.io/posts/gsoc-community-bonding/</loc>
+    <loc>https://example.com/posts/gsoc-community-bonding/</loc>
     <lastmod>2021-06-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mainakdeb.github.io/tags/conditional-gan/</loc>
+    <loc>https://example.com/tags/conditional-gan/</loc>
     <lastmod>2020-12-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mainakdeb.github.io/tags/dcgan/</loc>
+    <loc>https://example.com/tags/dcgan/</loc>
     <lastmod>2020-12-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mainakdeb.github.io/tags/gans/</loc>
+    <loc>https://example.com/tags/gans/</loc>
     <lastmod>2020-12-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mainakdeb.github.io/tags/mnist/</loc>
+    <loc>https://example.com/tags/mnist/</loc>
     <lastmod>2020-12-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mainakdeb.github.io/posts/conditional-dcgans/</loc>
+    <loc>https://example.com/posts/conditional-dcgans/</loc>
     <lastmod>2020-12-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mainakdeb.github.io/posts/experimenting-with-gans/</loc>
+    <loc>https://example.com/posts/experimenting-with-gans/</loc>
     <lastmod>2020-11-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mainakdeb.github.io/categories/</loc>
+    <loc>https://example.com/tags/blog/</loc>
+    <lastmod>2020-11-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/github-pages/</loc>
+    <lastmod>2020-11-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/posts/how-did-i-create-this-blog-/</loc>
+    <lastmod>2020-11-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/hugo/</loc>
+    <lastmod>2020-11-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/themes/</loc>
+    <lastmod>2020-11-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/archives/</loc>
+    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/</loc>
+    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/categories/</loc>
   </url>
   
 </urlset>
