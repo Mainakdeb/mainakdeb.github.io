@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GSoC - Coding Period Week 1 — mainak's page</title>
+  <meta name="description" content="GSoC - Coding Period Week 1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=VT323&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../static/css/crt.css" />
+  
+</head>
+<body>
+  <div class="screen">
+    <header class="topbar">
+      <a class="brand" href="../index.html">home</a>
+      <nav>
+        <a href="../blogs/index.html">blog</a>
+        <a href="https://mainakdeb.github.io/CV/CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </header>
+
+    <a class="back-link" href="../blogs/index.html">back to blogs</a>
+
+<article>
+  <h1>GSoC - Coding Period Week 1</h1>
+  <div class="post-meta">Jun 14, 2021  •  2 min read</div>
+  <div class="tags"><span class="tag">#GSoC</span><span class="tag">#DevoWorm</span></div>
+  <p>This blog post showcases what I did last week and what I plan to do next.</p>
+<h2>Work Done This Week (June 7th to June 13th)</h2>
+<h3>1. JPEG or PNG?</h3>
+<ul><li>Last week I was able to convert the <code>.tif</code> files from the cell-tracking-challenge dataset into NumPy arrays. The next goal was to save these NumPy arrays as image files. </li></ul>
+<ul><li>Here's where I made a mistake, I saved the images as <code>.jpeg</code> files. </li></ul>
+<ul><li>What I didn't know is that JPEG is a lossy compression method, it changes pixel level values as long as it "looks good" to the human observer.</li></ul>
+<ul><li>I used plotly to zoom into the saved <code>.jpeg</code> files, and noticed that the edges of the segmentation masks were noisy, then I plotted the images in 3D, with z axis as pixel value.</li></ul>
+<img src="images/compare_png_jpeg.png" alt="" width="700" height="">
+<ul><li>Turns out, JPEG is a lossy compression method - it is designed to save images using less bits even if it changes the pixel values as long as it "looks good" to a human observer.</li></ul>
+<ul><li>I decided to save the images in <code>.png</code> format; PNG is a lossless compression method. </li></ul>
+<ul><li>Each <code>.tif</code> file contains 3D data (as slices) from a single instant of time, I've named the corresponding <code>.png</code> files accordingly.<ul><li><code>features/F{time-point}_{slice}.png</code></li><li><code>segmentation_maps/L{time-point}_{slice}.png</code>  </li></ul></li></ul>
+<ul><li>Link to code:<ul><li><a href="https://github.com/Mainakdeb/GSoC-2021/blob/main/3d-embryo-segmentation/explore_and_preprocess_data.ipynb">Github</a></li><li><a href="https://colab.research.google.com/github/Mainakdeb/GSoC-2021/blob/main/3d-embryo-segmentation/explore_and_preprocess_data.ipynb">Google Colab</a></li></ul></li></ul>
+<h3>2. Defining The Dataset and Dataloader in PyTorch:</h3>
+<ul><li>I did not want to use <code>torchvision.datasets.ImageFolder()</code> for the dataset class.</li><li>The filenames (both features and labels) contain the time-point and slice number, which could be used to identify unique feature-label pairs.</li><li>I created a Pandas DataFrame that contains these unique id's and saved it as a csv file, using which the custom dataloader loads valid feature-label pairs.</li></ul>
+<h3>3. Experimenting with Gradio:</h3>
+<ul><li><a href="https://www.gradio.app/">Gradio</a> has been all over the ML community lately, I decided to give it a try. </li><li>The Gif below showcases a simple GUI (prototype) for the existing DevoLearn embryo segmentation model.</li></ul>
+<img src="images/gui_demo.gif" alt="" width="700" height="">
+<ul><li>This still needs a lot more work. I'll try to resume work on this after I'm done with the proposed work for next week.</li></ul>
+<h2>Planned:</h2>
+<ul><li>Upgrade the existing embryo segmentation model.</li><li>Spend more time on the GUI for the existing segmentation model.</li><li>Look into ways of hosting PyTorch + Gradio based apps online.</li></ul>
+</article>
+
+<a class="back-link" href="../blogs/index.html">back to blogs</a>
+
+
+    
+  </div>
+
+  <script src="../static/js/crt.js"></script>
+</body>
+</html>

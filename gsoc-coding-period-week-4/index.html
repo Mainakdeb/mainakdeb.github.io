@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GSoC - Coding Period Week 4 — mainak's page</title>
+  <meta name="description" content="GSoC - Coding Period Week 4" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=VT323&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../static/css/crt.css" />
+  
+</head>
+<body>
+  <div class="screen">
+    <header class="topbar">
+      <a class="brand" href="../index.html">home</a>
+      <nav>
+        <a href="../blogs/index.html">blog</a>
+        <a href="https://mainakdeb.github.io/CV/CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </header>
+
+    <a class="back-link" href="../blogs/index.html">back to blogs</a>
+
+<article>
+  <h1>GSoC - Coding Period Week 4</h1>
+  <div class="post-meta">Jul 05, 2021  •  2 min read</div>
+  <div class="tags"><span class="tag">#GSoC</span><span class="tag">#DevoWorm</span></div>
+  <p>Most of my time this week was spent on building the training pipeline for the proposed cell nucleus segmentation model in C. elegans embryos.</p>
+<h2>Work Done This Week (June 28th to July 4th)</h2>
+<ul><li>Back in <a href="https://mainakdeb.github.io/posts/gsoc-coding-period-week-1/">week-1</a>, I had worked on preprocessing data from the cell-tracking-challenge dataset. The dataset was extracted from <code>.tif</code> files and saved as pairs of <code>.png</code> files.</li></ul>
+<ul><li>To prevent anu CPU bottlenecks while training, I used PIL to resize all the training images to 1x256x256 beforehand.</li></ul>
+<ul><li>Defined a custom Dataset class for the data, this class uses a csv file that contains image id's, which are being used to identify feature-label pairs.</li></ul>
+<ul><li>Used Albumentations to define the image augmentation pipeline. Also defined a new class to add gaussian noise in training images (inputs only). The image below shows feature-label pairs from the training data, notice that one of the input images contains a lot more noise.</li></ul>
+    <img src="images/training_data.png" alt="" width="500" height="">
+<ul><li>Ran some tests to ensure that the dataloader works properly, plotted some feature-label pairs for visual inspection.</li></ul>
+<ul><li>Defined the network:<ul><li>Type - Feature Pyramid Network</li><li>Backbone - ResNet-18</li></ul></li></ul>
+<ul><li>Defined a rough training loop and trained the model for a couple epochs as a test. The image below showcases the metrics for the 2 epoch test-run. The IOU score is close to 79 after the 2nd epoch, which is not bad. </li></ul>
+    <img src="images/train_metrics_2_epochs.png" alt="" width="1000" height="">
+    <img src="images/inference_2_epochs.png" alt="" width="700" height="">
+<ul><li>Feel free to check out this work:<ul><li>Github - <a href="https://github.com/Mainakdeb/GSoC-2021/blob/1cbe0e8429671491168f3cceaa602d5953e85df3/cell-nucleus-segmentation/train_segmentation_model.ipynb">Link</a></li><li>NBViewer - <a href="https://nbviewer.jupyter.org/github/Mainakdeb/GSoC-2021/blob/1cbe0e8429671491168f3cceaa602d5953e85df3/cell-nucleus-segmentation/train_segmentation_model.ipynb">Link</a></li></ul></li></ul>
+<h2>Planned:</h2>
+<ul><li>Continue working on the nucleus segmentation model.<ul><li>Use Optuna to find suitable hyperparameters.</li><li>Experiment with mixed precision training and inference.</li><li>Build and deploy a GUI after training the model.</li></ul></li></ul>
+</article>
+
+<a class="back-link" href="../blogs/index.html">back to blogs</a>
+
+
+    
+  </div>
+
+  <script src="../static/js/crt.js"></script>
+</body>
+</html>

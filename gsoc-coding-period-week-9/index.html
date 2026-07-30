@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GSoC - Coding Period Week 9 — mainak's page</title>
+  <meta name="description" content="GSoC - Coding Period Week 9" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=VT323&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../static/css/crt.css" />
+  
+</head>
+<body>
+  <div class="screen">
+    <header class="topbar">
+      <a class="brand" href="../index.html">home</a>
+      <nav>
+        <a href="../blogs/index.html">blog</a>
+        <a href="https://mainakdeb.github.io/CV/CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </header>
+
+    <a class="back-link" href="../blogs/index.html">back to blogs</a>
+
+<article>
+  <h1>GSoC - Coding Period Week 9</h1>
+  <div class="post-meta">Aug 09, 2021  •  1 min read</div>
+  <div class="tags"><span class="tag">#GSoC</span><span class="tag">#DevoWorm</span></div>
+  <h2>Work Done This Week (August 2nd to August 8th)</h2>
+<ul><li>Replaced the static images on the DevoLearn web-app with interactive Plotly images, this will allow users to :<ul><li>Zoom into images</li><li>Pan across the zoomed image.</li><li>View images in full-screen mode</li><li>Save images as PNG</li></ul></li></ul>
+<ul><li>The gif below showcases the new interactive plots.</li></ul>
+<img src="images/zoom_fullscreen_demo.gif" alt="" width="1000" height="">
+<ul><li>Added a threshold slider for the 2 segmentation models. This threshold is applied on the output from the model. </li></ul>
+<ul><li>The edges are more pronounced when the threshold is set to a larger value, a low threshold results in more cell-area being covered by the segmentation map, leading to more accurate centroid mapping.</li></ul>
+<ul><li>The images below illustrate the differences in output with diffferent threshold values.</li></ul>
+<img src="images/membrane_seg_threshold.png" alt="" width="1000" height="">
+<img src="images/nuc_seg_threshold.png" alt="" width="1000" height="">
+<ul><li>Created first official deployment of devolearn web-app from the official repository, feel free to give it a try - <a href="https://devolearn.herokuapp.com/">https://devolearn.herokuapp.com/</a></li></ul>
+<ul><li>The underlying code for the website could be found in the <a href="https://github.com/DevoLearn/devolearn-web">DevoLearn web-app repository</a></li></ul>
+</article>
+
+<a class="back-link" href="../blogs/index.html">back to blogs</a>
+
+
+    
+  </div>
+
+  <script src="../static/js/crt.js"></script>
+</body>
+</html>

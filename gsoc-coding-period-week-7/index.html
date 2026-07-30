@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GSoC - Coding Period Week 7 — mainak's page</title>
+  <meta name="description" content="GSoC - Coding Period Week 7" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=VT323&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../static/css/crt.css" />
+  
+</head>
+<body>
+  <div class="screen">
+    <header class="topbar">
+      <a class="brand" href="../index.html">home</a>
+      <nav>
+        <a href="../blogs/index.html">blog</a>
+        <a href="https://mainakdeb.github.io/CV/CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </header>
+
+    <a class="back-link" href="../blogs/index.html">back to blogs</a>
+
+<article>
+  <h1>GSoC - Coding Period Week 7</h1>
+  <div class="post-meta">Jul 25, 2021  •  1 min read</div>
+  <div class="tags"><span class="tag">#GSoC</span><span class="tag">#DevoWorm</span></div>
+  <h2>Work Done This Week (July 20th to July 25th)</h2>
+<ul><li>Converted the nucleus segmentation model into ONNX (<a href="https://github.com/Mainakdeb/GSoC-2021/blob/main/cell-nucleus-segmentation/torch_to_onnx.ipynb">Link to code</a>)</li><li>Began working on the DevoLearn GUI, this time using <a href="https://github.com/Mainakdeb/GSoC-2021/blob/main/cell-nucleus-segmentation/torch_to_onnx.ipynb">Streamlit</a>, this would support multiple models on one web-app.<ul><li>Built the pipeline to run inference using the ONNX models, ran tests to ensure the 2 segmentation models work via the GUI.</li><li>The user will have the ability to select any of the DevoLearn models from the drop down menu to the left, then drag and drop inputs. I've also added in some examples, just in case.</li></ul></li></ul>
+<img src="images/devolearn_web_demo_1.gif" alt="" width="700" height="">
+<img src="images/devolearn_web_demo_2.gif" alt="" width="700" height="">
+<ul><li>The GIFs above showcase the current progress. I could get 2 of the segmentation models to work with the GUI. </li><li>As of now, the home page contains animations that highlight what the software can do. I have plans to add more content soon.</li><li>All related files for this work could be found here - [Github repository]()</li></ul>
+<h2>Planned:</h2>
+<ul><li>Finish building the GUI for DevoLearn, host it online on Heroku.</li><li>Try to render interactive plots (using Plotly) in the GUI. </li><li>Look into ways of running bulk inference using the web-GUI.</li><li>Move from Travis CI to Github Actions.</li></ul>
+</article>
+
+<a class="back-link" href="../blogs/index.html">back to blogs</a>
+
+
+    
+  </div>
+
+  <script src="../static/js/crt.js"></script>
+</body>
+</html>

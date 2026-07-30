@@ -1,0 +1,391 @@
+/* ============================================================
+   Retro CRT theme
+   Green phosphor by default; amber available via [data-theme].
+   NOTE: the mouse cursor is intentionally left as the OS default
+   everywhere. Do not add `cursor:` rules that hide/replace it.
+   ============================================================ */
+
+:root {
+  --phosphor: 154;              /* hue for green phosphor */
+  --fg: hsl(var(--phosphor) 84% 70%);
+  --fg-dim: hsl(var(--phosphor) 45% 55%);
+  --fg-faint: hsl(var(--phosphor) 30% 40%);
+  --bg: #000;                                  /* pure black for OLED */
+  --bg-glare-center: hsl(var(--phosphor) 12% 8%);
+  --glow: hsl(var(--phosphor) 84% 70%);
+  --scanline: hsl(var(--phosphor) 0% 0% / 0.14);
+  --link: hsl(var(--phosphor) 90% 80%);
+  --brain-hue: 110deg;   /* tints the 3D brain to match the phosphor */
+
+  --font-body: "IBM Plex Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+  --font-display: "VT323", "IBM Plex Mono", monospace;
+  --measure: 74ch;
+}
+
+/* Amber monitor variant */
+[data-theme="amber"] {
+  --phosphor: 35;
+  --fg: hsl(35 95% 62%);
+  --fg-dim: hsl(35 70% 50%);
+  --fg-faint: hsl(35 45% 38%);
+  --bg: #000;                                  /* pure black for OLED */
+  --bg-glare-center: hsl(35 20% 8%);
+  --glow: hsl(35 95% 62%);
+  --scanline: hsl(0 0% 0% / 0.14);
+  --link: hsl(40 100% 72%);
+  --brain-hue: -10deg;
+}
+
+/* Pure-red monitor variant */
+[data-theme="red"] {
+  --phosphor: 0;
+  --fg: hsl(0 100% 62%);
+  --fg-dim: hsl(0 75% 50%);
+  --fg-faint: hsl(0 55% 38%);
+  --bg: #000;                                  /* pure black for OLED */
+  --bg-glare-center: hsl(0 35% 8%);
+  --glow: hsl(0 100% 55%);
+  --scanline: hsl(0 0% 0% / 0.14);
+  --link: hsl(0 100% 74%);
+  --brain-hue: -45deg;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.7;
+  text-shadow: 0 0 2px var(--glow);
+  overflow-x: hidden;
+}
+
+/* ----- Full-screen CRT overlays ----- */
+
+/* Curved-screen glare — off (pure flat black) */
+#glare {
+  display: none;
+}
+
+/* Interlacing scanlines + flicker */
+#interlaced {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    transparent 0px 2px,
+    var(--scanline) 3px 4px
+  );
+  /* Slow, smooth drift instead of a rapid jump — far less flicker. */
+  animation: lines 8s linear infinite;
+}
+
+@keyframes lines {
+  0%   { background-position: 0 0; }
+  100% { background-position: 0 4px; }
+}
+
+/* Soft vignette on the corners — off (was making the center look hazy) */
+#vignette {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body { animation: none; }
+  #interlaced { animation: none; }
+  .blink { animation: none; }
+}
+
+/* ----- Layout ----- */
+
+.screen {
+  position: relative;   /* no z-index: keeps children in the root stacking
+                           context so images/brain can rise above the overlay */
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 5rem;
+}
+
+/* ----- Top bar / nav ----- */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.4rem 0 1rem;
+  border-bottom: 1px solid var(--fg-faint);
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.topbar .brand {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: var(--fg);
+}
+
+.topbar nav {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.topbar nav a {
+  color: var(--fg-dim);
+  text-decoration: none;
+}
+.topbar nav a:hover { color: var(--fg); text-decoration: underline; }
+
+.theme-toggle {
+  font-family: var(--font-body);
+  background: transparent;
+  color: var(--fg-dim);
+  border: 1px solid var(--fg-faint);
+  padding: 0.15rem 0.6rem;
+  border-radius: 2px;
+  text-shadow: inherit;
+}
+.theme-toggle:hover { color: var(--fg); border-color: var(--fg-dim); }
+
+/* ----- ASCII banner ----- */
+
+.banner {
+  font-family: var(--font-display);
+  white-space: pre;
+  overflow-x: auto;
+  line-height: 1;
+  font-size: clamp(0.5rem, 2.1vw, 1rem);
+  margin: 1.5rem 0 0.5rem;
+  text-shadow: 0 0 2px var(--glow);
+}
+
+.tagline { color: var(--fg-dim); margin: 0 0 1.5rem; }
+
+/* ----- Rotating brain widget (home) ----- */
+
+.brain-widget {
+  float: right;
+  width: 190px;
+  margin: 0 0 1rem 1.75rem;
+  text-align: center;
+  text-decoration: none;
+  color: var(--fg-dim);
+}
+.brain-frame {
+  display: block;
+  border: 1px solid var(--fg-faint);
+  border-radius: 2px;
+  background: hsl(var(--phosphor) 0% 0% / 0.35);
+  position: relative;
+  z-index: 25;            /* render above the CRT scanline overlay */
+}
+.brain-mini {
+  display: block;
+  width: 100%;
+  height: 188px;
+  --poster-color: transparent;
+  background-color: transparent;
+  pointer-events: none;               /* let clicks fall through to the link */
+  /* Strip the model's baked orange/blue and re-tint to the phosphor color,
+     keeping tonal range so the surface shading stays visible. */
+  filter: grayscale(1) sepia(1) saturate(2.3) hue-rotate(var(--brain-hue))
+          contrast(1.7) brightness(0.95) drop-shadow(0 0 2px var(--glow));
+}
+.brain-caption {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  margin-top: 0.25rem;
+}
+.brain-widget:hover .brain-caption { color: var(--fg); text-decoration: underline; }
+
+/* ----- Brain viewer page ----- */
+
+.brain-title { font-family: var(--font-display); font-size: 2.6rem; margin: 1rem 0 0.25rem; text-shadow: 0 0 2px var(--glow); }
+.brain-stage {
+  margin: 1.5rem 0;
+  position: relative;
+  z-index: 25;            /* render above the CRT scanline overlay */
+}
+
+.brain-controls {
+  position: fixed;
+  left: 50%;
+  bottom: 1.25rem;
+  transform: translateX(-50%);
+  z-index: 30;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.ctl-btn {
+  font-family: var(--font-body);
+  background: hsl(var(--phosphor) 0% 0% / 0.65);
+  color: var(--fg-dim);
+  border: 1px solid var(--fg-faint);
+  border-radius: 2px;
+  padding: 0.35rem 0.8rem;
+  text-shadow: inherit;
+}
+.ctl-btn:hover { color: var(--fg); border-color: var(--fg-dim); }
+.ctl-btn.off { color: var(--fg-faint); opacity: 0.55; text-decoration: line-through; }
+.brain-full {
+  width: 100%;
+  height: 70vh;
+  --poster-color: transparent;
+  background-color: transparent;
+  /* Strip the model's baked orange/blue and re-tint to the phosphor color,
+     keeping tonal range so the surface shading stays visible. */
+  filter: grayscale(1) sepia(1) saturate(2.3) hue-rotate(var(--brain-hue))
+          contrast(1.7) brightness(0.95) drop-shadow(0 0 2px var(--glow));
+}
+
+@media (max-width: 640px) {
+  .brain-widget { float: none; margin: 0 auto 1.5rem; }
+}
+
+/* Blinking command prompt */
+.prompt { font-family: var(--font-display); font-size: 1.4rem; margin: 1rem 0 2rem; }
+.blink { animation: blink 1.05s steps(1) infinite; }
+@keyframes blink { 0%,49% { opacity: 1; } 50%,100% { opacity: 0; } }
+
+/* ----- Post listing (directory-style) ----- */
+
+.dir-head { color: var(--fg-dim); margin: 2rem 0 0.5rem; }
+
+.post-list { list-style: none; margin: 0; padding: 0; }
+
+.post-list li {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+  padding: 0.35rem 0;
+  border-bottom: 1px dashed var(--fg-faint);
+}
+
+.post-list .date { color: var(--fg-faint); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.post-list a { color: var(--fg); text-decoration: none; flex: 1; }
+.post-list a:hover { text-decoration: underline; }
+.post-list .arrow { color: var(--fg-dim); }
+
+.tags { margin-top: 0.25rem; }
+.tag {
+  display: inline-block;
+  color: var(--fg-dim);
+  border: 1px solid var(--fg-faint);
+  border-radius: 2px;
+  padding: 0 0.4rem;
+  margin: 0 0.3rem 0.3rem 0;
+  font-size: 0.8rem;
+}
+
+/* ----- Article content ----- */
+
+article { margin-top: 1rem; }
+
+.post-meta { color: var(--fg-faint); margin-bottom: 1.5rem; }
+
+article h1, article h2, article h3, article h4 {
+  font-family: var(--font-display);
+  line-height: 1.1;
+  text-shadow: 0 0 2px var(--glow);
+  margin: 2rem 0 0.75rem;
+}
+article h1 { font-size: 2.4rem; }
+article h2 { font-size: 1.9rem; }
+article h3 { font-size: 1.5rem; }
+
+article h2::before { content: "// "; color: var(--fg-faint); }
+
+article p { margin: 1rem 0; }
+
+article a { color: var(--link); text-underline-offset: 3px; }
+
+article img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.25rem auto;
+  border: 1px solid var(--fg-faint);
+  padding: 4px;
+  background: hsl(var(--phosphor) 0% 0% / 0.35);
+  filter: saturate(0.85) contrast(1.05);
+  position: relative;
+  z-index: 25;            /* render above the CRT scanline overlay */
+}
+
+article figure { margin: 1.25rem 0; text-align: center; }
+article figcaption { color: var(--fg-dim); font-size: 0.9rem; }
+
+article blockquote {
+  margin: 1.25rem 0;
+  padding: 0.5rem 1rem;
+  border-left: 3px solid var(--fg-dim);
+  color: var(--fg-dim);
+}
+
+article ul, article ol { padding-left: 1.5rem; }
+article li { margin: 0.35rem 0; }
+
+article hr { border: none; border-top: 1px dashed var(--fg-faint); margin: 2rem 0; }
+
+/* Code */
+code, pre {
+  font-family: var(--font-body);
+  text-shadow: none;
+}
+:not(pre) > code {
+  background: hsl(var(--phosphor) 0% 0% / 0.5);
+  border: 1px solid var(--fg-faint);
+  border-radius: 2px;
+  padding: 0.05rem 0.35rem;
+  font-size: 0.9em;
+}
+pre {
+  background: hsl(var(--phosphor) 0% 0% / 0.55);
+  border: 1px solid var(--fg-faint);
+  border-left: 3px solid var(--fg-dim);
+  border-radius: 2px;
+  padding: 1rem;
+  overflow-x: auto;
+  line-height: 1.5;
+  color: var(--fg);
+}
+pre code { background: none; border: none; padding: 0; }
+
+table { border-collapse: collapse; width: 100%; margin: 1.25rem 0; }
+th, td { border: 1px solid var(--fg-faint); padding: 0.4rem 0.6rem; text-align: left; }
+th { color: var(--fg); }
+
+/* ----- Footer & back link ----- */
+
+.back-link { display: inline-block; margin: 1rem 0 2rem; color: var(--fg-dim); text-decoration: none; }
+.back-link:hover { color: var(--fg); }
+.back-link::before { content: "< "; }
+
+.site-footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--fg-faint);
+  color: var(--fg-faint);
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.site-footer a { color: var(--fg-dim); text-decoration: none; }
+.site-footer a:hover { color: var(--fg); }

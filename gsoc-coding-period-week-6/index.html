@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GSoC - Coding Period Week 6 — mainak's page</title>
+  <meta name="description" content="GSoC - Coding Period Week 6" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=VT323&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../static/css/crt.css" />
+  
+</head>
+<body>
+  <div class="screen">
+    <header class="topbar">
+      <a class="brand" href="../index.html">home</a>
+      <nav>
+        <a href="../blogs/index.html">blog</a>
+        <a href="https://mainakdeb.github.io/CV/CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </header>
+
+    <a class="back-link" href="../blogs/index.html">back to blogs</a>
+
+<article>
+  <h1>GSoC - Coding Period Week 6</h1>
+  <div class="post-meta">Jul 19, 2021  •  1 min read</div>
+  <div class="tags"><span class="tag">#GSoC</span><span class="tag">#DevoWorm</span></div>
+  <h2>Work Done This Week (July 12th to July 19th)</h2>
+<ul><li>Swapped out the model for the Cell membrane segmentation with the upgraded model in DevoLearn's repository, ran tests locally before pushing because Travis has been discontinued. (<a href="https://github.com/DevoLearn/devolearn/commit/e65b2f71f597fcfc1358f7fb44ea36e3e9fc9f3e">Link to commit</a>)</li></ul>
+<img src="images/tests_local_3_models.png" alt="" width="1000" height="">
+<ul><li>Renamed the <code>embryo_segmentor</code> package to <code>cell_membrane_segmentor</code>. The reason for this renaming is to avoid naming conflicts when new segmentation models are added. (<a href="https://github.com/DevoLearn/devolearn/commit/e2da9401d6712e7b0c6667ba803e50bda8e9457c">Link to commit</a>)<ul><li>Old syntax - <code>from devolearn import embryo_segmentor</code></li><li>New syntax - <code>from devolearn import cell_membrane_segmentor</code></li></ul></li></ul>
+<ul><li>Integrated the new nucleus segmentation model into the library (<a href="https://github.com/DevoLearn/devolearn/commit/bc59be395a68e4565ecde007426c778cc3f047ed">Link to commit</a>)<ul><li>Wrote the necessary functions to run inference, on CPU and GPU.</li><li>Made additions to the testing script to accomodate this additional model.</li><li>Steps for usage:<ol><li><code>from devolearn import cell_nucleus_segmentor</code></li><li><code>segmentor = cell_nucleus_segmentor(device='cuda')</code></li><li><code>pred = segmentor.predict(image_path = "input_image.png")</code></li><li><code>plt.imshow(pred)</code></li></ol></li></ul></li></ul>
+<ul><li>Inference Examples:<ol><li>Input image with Varying Z axis - <img src="images/z_infer.gif" alt="" width="1000" height=""></li></ol></li></ul>
+<ol><li>Inputs varying through time - <img src="images/time_infer.gif" alt="" width="1000" height=""></li></ol>
+<h2>Planned:</h2>
+<ul><li>Build a GUI for all DevoLearn models and host them online.</li><li>Look into ways of running bulk inference using the web-GUI.</li><li>Move from Travis CI to Github Actions.</li></ul>
+</article>
+
+<a class="back-link" href="../blogs/index.html">back to blogs</a>
+
+
+    
+  </div>
+
+  <script src="../static/js/crt.js"></script>
+</body>
+</html>

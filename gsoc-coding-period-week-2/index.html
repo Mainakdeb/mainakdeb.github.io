@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GSoC - Coding Period Week 2 — mainak's page</title>
+  <meta name="description" content="GSoC - Coding Period Week 2" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=VT323&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../static/css/crt.css" />
+  
+</head>
+<body>
+  <div class="screen">
+    <header class="topbar">
+      <a class="brand" href="../index.html">home</a>
+      <nav>
+        <a href="../blogs/index.html">blog</a>
+        <a href="https://mainakdeb.github.io/CV/CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </header>
+
+    <a class="back-link" href="../blogs/index.html">back to blogs</a>
+
+<article>
+  <h1>GSoC - Coding Period Week 2</h1>
+  <div class="post-meta">Jun 20, 2021  •  2 min read</div>
+  <div class="tags"><span class="tag">#GSoC</span><span class="tag">#DevoWorm</span></div>
+  <p>The goal for this week was to upgrade the DevoLearn cell membrane segmentation model. Feel free to check out the code - <a href="https://github.com/Mainakdeb/GSoC-2021/tree/main/cell-membrane-segmentation">Link</a></p>
+<h2>Work Done This Week (June 14th to June 20th)</h2>
+<h3>1. Fixed the Preprocessing Pipeline:</h3>
+<ul><li>Fixed a strange issue that led to an offset in the image filenames.</li><li>Used PNG format to store the images instead of JPG (which was being used).</li><li>The JPG format led to lossy edges in segmentation maps, which was being tackled using OpenCV based operations, but that led to larger gaps between the segmentation maps of individual cells. This has been fixed.</li><li>Saved postprocessed data in Google Drive, links below:<ul><li>Postprocessed Images - <a href="https://drive.google.com/file/d/1wy53XglZl5Pgdq0V6pT3Q7DJeTheZmoh/view?usp=sharing">Google Drive link</a></li><li>Csv file - <a href="https://drive.google.com/file/d/1-BE9yxcEW9i_-GPrIc7ABkosXOAKIES-/view?usp=sharing">Google Drive link</a></li><li>Original data - <a href="https://www.researchgate.net/publication/332572299_3DMMS_Robust_3D_Membrane_Morphological_Segmentation_of_C_elegans_embryo">Paper Link</a>, <a href="https://figshare.com/articles/dataset/Dataset_for_MMS/7781777">Data on Figshare</a></li></ul></li><li>The diagram below highlights the difference between new and old training data.</li></ul>
+<img src="images/compare_training_data.png" alt="" width="700" height="">
+<h3>2. New Augmentation techniques:</h3>
+<ul><li>Added in a couple more <a href="https://github.com/albumentations-team/albumentations">Albumentations</a> based image augmentation techniques.</li></ul>
+<h3>3. Automated Hyperparameter Optimization:</h3>
+<ul><li>Used Optuna to automate the process of finding optimal hyperparameters, I used it to optimize the learning rate and batch size to maximize the IOU score.</li><li>Ran 100 Optuna trials, 1 epoch each, on 10% of available data.</li></ul>
+<h3>4. Training metrics:</h3>
+<ul><li>The image below showcases metrics after 50 epochs of training.</li></ul>
+<img src="images/training_metrics.png" alt="" width="700" height="">
+<h3>5. Old vs New Model:</h3>
+<ul><li>The code to generate the following plots could be found in the <a href="https://github.com/Mainakdeb/GSoC-2021/blob/main/cell-membrane-segmentation/train_segmentation_model.ipynb">training notebook</a>. </li></ul>
+<img src="images/comparision_oldvsnew.gif" alt="" width="700" height="">
+<img src="images/comparision_1.png" alt="" width="700" height="">
+<img src="images/comparision_2.png" alt="" width="700" height="">
+<h2>Planned:</h2>
+<ul><li>Push the upgraded cell membrane segmentation model into the main DevoLearn repository.</li><li>Work on upgrading the DevoLearn lineage population model.</li><li>Revamp the existing DevoLearn starter notebook, add interactive plots.</li></ul>
+</article>
+
+<a class="back-link" href="../blogs/index.html">back to blogs</a>
+
+
+    
+  </div>
+
+  <script src="../static/js/crt.js"></script>
+</body>
+</html>

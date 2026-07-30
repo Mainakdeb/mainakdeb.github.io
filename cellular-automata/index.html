@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Diving into Cellular Automata — mainak's page</title>
+  <meta name="description" content="Diving into Cellular Automata" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=VT323&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../static/css/crt.css" />
+  
+</head>
+<body>
+  <div class="screen">
+    <header class="topbar">
+      <a class="brand" href="../index.html">home</a>
+      <nav>
+        <a href="../blogs/index.html">blog</a>
+        <a href="https://mainakdeb.github.io/CV/CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </header>
+
+    <a class="back-link" href="../blogs/index.html">back to blogs</a>
+
+<article>
+  <h1>Diving into Cellular Automata</h1>
+  <div class="post-meta">Jun 03, 2022  •  3 min read</div>
+  <div class="tags"><span class="tag">#Emergent Systems</span><span class="tag">#Cellular Automata</span></div>
+  <p>I remember <a href="https://twitter.com/tweetsauce">Vsauce</a>(Michael Stevens) tweeting out a link to one of <a href="https://www.youtube.com/watch?v=Kk2MH9O4pXY">Alan Zucconi's videos</a> about John Conway's game of Life. This is what pulled me into the world of Cellular Automata.</p>
+<p>Wolfram's Rule-30 is something that had me scratching my head, but why? 🤔</p>
+<h2>Elementary Cellular Automaton and Rule 30:</h2>
+<p>Consider a 1-D realm with alive or dead cells. As we iterate over generations, the new state of a cell will only depend on  its nearest neighbors and past state.  A set of rules for this 1-D world could be:</p>
+<center><img src="images/rule_30.svg" width=500 ></center>
+<p align="center">
+<a href="https://mathworld.wolfram.com/ElementaryCellularAutomaton.html"><i>Image Source</i></a>
+</p>
+<p>Note: cells below represent new cell states. Rule outcomes encoded in binary -> 30 = 00011110<sub>2</sub></p>
+<p>Starting from one single black cell we get the following generations.</p>
+<center><img src="images/rule_30_output.png" width=600></center>
+<p align="center">
+<a href="https://mathworld.wolfram.com/Rule30.html
+"><i>Image Source</i></a>
+</p>
+<p>The remarkable thing about this rule is its chaotic nature, notably the middle column. In fact, this rule is often employed to generate random integers. Generating <em>chaos</em> from <em>rules</em> 👀</p>
+<p>In case you're up for a challenge, Wolfram poses 3 problems concerning random nature of the center column, $30,000 for 3 problems -> <a href="https://www.rule30prize.org/">www.rule30prize.org</a></p>
+<h2>Conway's Game of Life</h2>
+<p>Named after its creator <a href="https://en.wikipedia.org/wiki/John_Horton_Conway">John Horton Conway</a>, it features an infinite 2D grid-world of cells, having 2 possible states, <em>live</em> or <em>dead</em>.  Each cell can only perceive its 8 neighbors, with rules shown below:</p>
+<center><img src="images/GOL_rules.png" width=400 > </center>
+<p align="center">
+<a href="https://www.researchgate.net/figure/Rules-of-Conways-Game-of-Life_fig5_339605473"><i>Image Source</i></a>
+</p>
+<p> Rules for Game of Life:</p>
+<ol><li>Any live cell with two or three live neighbours survives.</li></ol><ol><li>Any dead cell with three live neighbours becomes a live cell.</li><li>All other live cells die in the next generation. Similarly, all other dead cells stay dead.</li></ol>
+<center><img src="images/GOL_iterations.gif" width=250 ></center>
+<p align="center">
+<a href="https://github.com/woodruffw/CGoL
+"><i>Image Source</i></a>
+</p>
+<p>Turns out, Game of Life is <a href="https://en.wikipedia.org/wiki/Turing_completeness">Turing complete</a>. Paul Rendell designed a <a href="http://rendell-attic.org/gol/tm.htm">Turing Machine in Game of Life</a> back in 2000.</p>
+<center><img src="https://media.arxiv-vanity.com/render-output/5370836/x9.png" width=550 >
+</center>
+<p align="center">
+<a href="https://media.arxiv-vanity.com/render-output/5370836/x9.png"><i>Image Source</i></a>
+</p>
+<p>Later in the year 2016, Nicolas Loizeau designed a <a href="https://conwaylife.com/wiki/8-bit_programmable_computer">programmable 8-bit computer in Game of Life</a> which too is a sight to behold.</p>
+<center><img src="https://i.ytimg.com/vi/8unMqSp0bFY/maxresdefault.jpg" width=500 >
+</center>
+<p align="center">
+<a href="https://www.youtube.com/watch?v=8unMqSp0bFY"><i>Screenshot from Nicolas Loizeau's Video</i></a>
+</p>
+<h2>Simulating Life Within Life - Droste Effect in Conway's Game of Life</h2>
+<p>Droste effect is the effect of a picture recursively appearing within itself.  The game of life is turing complete, which enables one to  simulate Life within itself as demonstrated in <a href="https://www.youtube.com/watch?v=xP5-iIeKXE8">this video</a>  by Philip Bradbury. Following is a screenshot from Bradbury's video.</p>
+<img src="images/droste_effect_in_GOL.png" width=800 >
+<p align="center">
+<a href="https://www.youtube.com/watch?v=xP5-iIeKXE8"><i>Screenshot from Philip Bradbury's Video</i></a>
+</p>
+<p>Life is a game with no players, a game that never ends, a game that sometimes plays itself 🎮</p>
+</article>
+
+<a class="back-link" href="../blogs/index.html">back to blogs</a>
+
+
+    
+  </div>
+
+  <script src="../static/js/crt.js"></script>
+</body>
+</html>

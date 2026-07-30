@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GSoC - Community Bonding — mainak's page</title>
+  <meta name="description" content="GSoC - Community Bonding" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=VT323&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../static/css/crt.css" />
+  
+</head>
+<body>
+  <div class="screen">
+    <header class="topbar">
+      <a class="brand" href="../index.html">home</a>
+      <nav>
+        <a href="../blogs/index.html">blog</a>
+        <a href="https://mainakdeb.github.io/CV/CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </header>
+
+    <a class="back-link" href="../blogs/index.html">back to blogs</a>
+
+<article>
+  <h1>GSoC - Community Bonding</h1>
+  <div class="post-meta">Jun 06, 2021  •  2 min read</div>
+  <div class="tags"><span class="tag">#GSoC</span><span class="tag">#DevoWorm</span></div>
+  <p>This blog post summary of what I've been doing this week and what I plan to do in the coming week.</p>
+<h2>Work Done This Week (May 17th to June 6th)</h2>
+<ul><li>Gave a presentation on the weekly DevoWorm meeting, discussed the goals and deadlines that need to be met in the coming months - <a href="https://docs.google.com/presentation/d/1VR5oWVtKlGROYGVXpA4JboOeKzyke3N0hIJUphotOZA/edit?usp=sharing">link to the slides</a></li><li>Read some articles/papers suggested by my mentor that deal with working with communities and collaboration, liked one in particular that talks about "bursty" communication and how it helps remote teams thrive - <a href="https://drive.google.com/file/d/1Kf6zMxhCUX0orIAPlDsHfSvzxUoAh9B3/view">link</a></li><li>Read publications that deal with extracting data from C. elegans embryogenesis data, tried to find possible applications that could be implemented. I've linked to some of the papers I came across below:<ul><li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5602880/">Segmentation and classification of two-channel C. elegans nucleus-labeled fluorescence images</a></li><li><a href="https://www.researchgate.net/publication/6055472_3D_cell_nuclei_segmentation_based_on_gradient_flow_tracking">3D cell nuclei segmentation based on gradient flow tracking</a></li><li><a href="https://www.nature.com/articles/s41540-020-00152-8">3D convolutional neural networks-based segmentation to acquire quantitative criteria of the nucleus during mouse embryogenesis</a> - </li></ul></li></ul>
+<ul><li>The last paper in the list above links to the <a href="http://celltrackingchallenge.net/">cell-tracking-challenge website</a>, which contains download links to many datasets, among which I found a 3D+t fluorescence microscopy dataset of the developing C. elegans embryo with segmentation maps - <a href="http://celltrackingchallenge.net/3d-datasets/">link</a>.</li></ul>
+<ul><li>I had zero experience with <em>.tif</em> files, had to figure out how to convert them to numpy arrays, then used matplotlib to plot them as images.</li></ul>
+<img src="images/inferno_sbs_celltrackingchallenge.png" alt="" width="700" height="">
+<ul><li>The dataset is by no means ideal, it is scattered across multiple folders and contains many useless datapoints near the extreme ends of the dorsal-ventral axis.</li></ul>
+<img src="images/inferno_sbs_celltrackingchallenge_grid.png" alt="" width="1300" height="">
+<ul><li>Links to the notebook :<ul><li><a href="https://colab.research.google.com/github/Mainakdeb/GSoC-2021/blob/main/3d-embryo-segmentation/explore_and_preprocess_data.ipynb">Google Colab</a></li><li><a href="https://nbviewer.jupyter.org/github/Mainakdeb/GSoC-2021/blob/main/3d-embryo-segmentation/explore_and_preprocess_data.ipynb">NBviewer</a></li><li><a href="https://github.com/Mainakdeb/GSoC-2021">Github repository</a></li></ul></li></ul>
+<h2>Planned :</h2>
+<ul><li>Begin working on upgrading the DevoLearn cell membrane segmentation model. </li><li>Explore and clean the cell-tracking-challenge dataset. </li><li>Discuss in detail about how the cell-tracking-challenge dataset could be used to automate the process of 3D cell-segmentation.</li></ul>
+</article>
+
+<a class="back-link" href="../blogs/index.html">back to blogs</a>
+
+
+    
+  </div>
+
+  <script src="../static/js/crt.js"></script>
+</body>
+</html>

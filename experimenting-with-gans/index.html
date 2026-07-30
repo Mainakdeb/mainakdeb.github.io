@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Experimenting With GANs — mainak's page</title>
+  <meta name="description" content="Experimenting With GANs" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=VT323&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../static/css/crt.css" />
+  
+</head>
+<body>
+  <div class="screen">
+    <header class="topbar">
+      <a class="brand" href="../index.html">home</a>
+      <nav>
+        <a href="../blogs/index.html">blog</a>
+        <a href="https://mainakdeb.github.io/CV/CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </header>
+
+    <a class="back-link" href="../blogs/index.html">back to blogs</a>
+
+<article>
+  <h1>Experimenting With GANs</h1>
+  <div class="post-meta">Nov 21, 2020  •  4 min read</div>
+  <div class="tags"><span class="tag">#GANs</span><span class="tag">#MNIST</span><span class="tag">#DCGAN</span></div>
+  <p><img src="images/digit-demo.gif" alt="" /></p>
+<p>This gif showcases generated samples from a GAN trained on the MNIST dataset. <a href="https://github.com/Mainakdeb/digit-GAN">Link to project repository</a>.</p>
+<h2>Background :</h2>
+<p>Last saturday, I was browsing YouTube on my phone when the algorithm suggested me a video on GANs by Computerphile. Until that point I had a vague idea of what GANs were, mostly derived from conversations with my brother, but I didn't really know how they worked.</p>
+<p>Anyways, I watched the whole video and was heavily impressed by the whole notion of making computers generate new real-looking data. Rob Miles did an excellent job at explaining the core concepts, and the best part is, he did it all using simple easy-to-grasp examples.</p>
+<h2>Diving Deeper :</h2>
+<p>I spent the next couple days watching lectures on GANs and making notes along the way, trying to wrap my head around the math behind it. <a href="https://www.youtube.com/watch?v=5WoItGTWV54&ab_channel=StanfordUniversitySchoolofEngineering">This Stanford lecture by Serena Yeung</a> was the best one I found. I also had to refer to the following papers multiple times :</p>
+<ul><li><a href="https://arxiv.org/abs/1406.2661">Generative Adversarial  Networks</a> by Ian Goodfellow et al.</li><li>The <a href="https://arxiv.org/abs/1511.06434">DCGAN paper</a> by Alec Radford, Luke Metz, Soumith Chintala.</li></ul>
+<h2>What I understood :</h2>
+<p>Two neural networks, the Generator(G) and the Discriminator(D) are pitted against one another and trained simultaneously. But what are they aiming to accomplish?</p>
+<ul><li>The <strong>Discriminator</strong> aims to distinguish between real and generated samples. </li><li>The <strong>Generator</strong> aims to produce real-looking samples/images to fool the Discriminator.</li></ul>
+<p>In simple terms, the Generator is like an art-forger who is trying to sharpen its skills, and the Discriminator is like an art-expert which the generator wants to fool.</p>
+<h2>The Math :</h2>
+<p>The 2 networks are trained in a minimax game formulation:</p>
+<p><img src="images/minmax.png" alt="" /></p>
+<ol><li>x represents a real sample.</li><li>z is random vector in the latent space, or lets just say random noise. </li><li>D(x) is the discriminator output for a real sample x.</li><li>G(z) is the generated output from the generator net with noise z given as input.</li><li>D(G(z)) is the discriminator output for generated fake data G(z).</li><li>E represents the expected value or the average.</li></ol>
+<ul><li>The <strong>Discriminator</strong> wants to make sure D(x) is close to 1 and D(G(x)) is close to 0. It attempts to maximise the following objective.</li></ul>
+<p><img src="images/discriminator_objective.png" alt="" /></p>
+<ul><li>The <strong>Generator</strong> wants to make sure D(G(z)) is close to 1 i.e. fool the discriminator into thinking  generated G(z) is real. It attempts to minimise the following objective.</li></ul>
+<p><img src="images/generator_objective_weak_grad.png" alt="" /></p>
+<p>But in practice, optimizing this generator objective does not work well because it has vanishing gradients early on. So instead, people use a different objective function as shown below:</p>
+<p><img src="images/generator_objective_practical.png" alt="" /></p>
+<p>This(green line) has a higher gradient signal for bad samples i.e. towards the left, hence the model learns more in region of bad samples. The purple line is almost flat (weak gradients) towards the left, which is not suitable for training.</p>
+<p><img src="images/weak_grad_vs_strong_grad.png" alt="" /></p>
+<h2>If all goes well:</h2>
+<p>The Generator generates samples indistinguishable from real samples. And the discriminator is forced to guess (with a probability of ½).</p>
+<h2>Applying what I learned - Generating Handwritten Digits using PyTorch:</h2>
+<p>At this point, I had a fair grip over how GANs work. so I decided to experiment further. Below is a diagram that explains the flow of data through the models.</p>
+<p><img src="images/draw_io_gan.png" alt="" /></p>
+<p> I used 2 Convolutional Neural Networks, one as the discriminator and one as a generator. This architecture is inspired from the famous <a href="https://arxiv.org/abs/1511.06434">DCGAN paper</a> by Alec Radford, Luke Metz, Soumith Chintala. I also copied the parameters and guidelines mentioned in the paper which is the reason why I got reasonably good results. I also learned using tensorboard on Google Colab on the way :)</p>
+<p> Some fake samples from the Generator Network are illustrated below.</p>
+<p><img src="images/generated_digits.png" alt="" /></p>
+<p>These samples are far from perfect. In fact they barely look like hand-written digits. But the sheer fact that this is something 'imagined' from scratch by the computer doesn't fail to astound me. If you have read this far, feel free to check out the <a href="https://github.com/Mainakdeb/digit-GAN">project repository.</a></p>
+</article>
+
+<a class="back-link" href="../blogs/index.html">back to blogs</a>
+
+
+    
+  </div>
+
+  <script src="../static/js/crt.js"></script>
+</body>
+</html>

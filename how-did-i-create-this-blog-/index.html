@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How Did I Create This Blog ? — mainak's page</title>
+  <meta name="description" content="How Did I Create This Blog ?" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=VT323&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../static/css/crt.css" />
+  
+</head>
+<body>
+  <div class="screen">
+    <header class="topbar">
+      <a class="brand" href="../index.html">home</a>
+      <nav>
+        <a href="../blogs/index.html">blog</a>
+        <a href="https://mainakdeb.github.io/CV/CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </header>
+
+    <a class="back-link" href="../blogs/index.html">back to blogs</a>
+
+<article>
+  <h1>How Did I Create This Blog ?</h1>
+  <div class="post-meta">Nov 20, 2020  •  3 min read</div>
+  <div class="tags"><span class="tag">#hugo</span><span class="tag">#themes</span><span class="tag">#github-pages</span><span class="tag">#blog</span></div>
+  <h2>Intro :</h2>
+<p>I should have updated my blog long ago, but here I am, about 7 months late, with a brand new blog. So, how did I create this and host it online on Github Pages, given that I have near zero experience in web-dev?</p>
+<p>My brother suggested me to use Hugo for my new blog, I googled 'Hugo templates' and ended up at https://themes.gohugo.io/. I spent around an hour to shortlist and pick a suitable theme. Then came the hard part (at least for me)</p>
+<h2>The Difficult Part :</h2>
+<p>I'll divide it into steps :</p>
+<ol><li>Install Hugo ; I'll skip this step, just google "install hugo {your OS i.e. Ubuntu, Windows}" and follow the steps.</li></ol>
+<ol><li>Then you'll need to create a new site and download a theme. I simply cloned a theme into the themes directory.Copy paste the following commands in your terminal</li></ol>
+<pre><code># Create new site
+$ hugo new site mainaks_site
+$ cd mainaks_site
+$ cd themes
+# Download the theme of your choice. The given link is for the theme I used.
+$ git clone https://github.com/vaga/hugo-theme-m10c.git themes/m10c
+</code></pre>
+<ol><li>Go into ``<code>./mainaks_site/themes/hugo-theme-m10C/exampleSite/</code>`<code> and copy paste the files in that directory (like config.toml, content etc.) into </code>`<code>./mainaks_site/</code>`` . Replace existing files if asked.</li></ol>
+<ol><li>One important thing to remember is to edit the ``<code>config.toml</code>`<code> file in </code>`<code>./mainaks_site/</code>``. </li></ol>
+<ul><li>Open the ``<code>config.toml</code>`<code> file and set the themedir as the directory to the cloned theme which was </code>`<code>./themes/</code>``in my case.</li><li>Set theme as the name of the cloned folder, which was ``<code>m10c</code>`<code> in my case because I had renamed the cloned folder from </code>`<code>hugo-theme-m10c</code>`<code> to just </code>`<code>m10c</code>``. </li><li>Set the baseURL as ``<code>https://username.github.io/</code>`` where username is your Github username, and set blog title.</li><li>Set the other params to you wish.</li></ul>
+<p>    There's one more change that needs to be made in the ``<code>config.toml</code>`` file, which I'm saving for later. Let's run the website locally first.</p>
+<h2>(Local) Moment of truth :</h2>
+<p>It took me 2 hours to make it this far. If you are running quicker, thank the Hugo-Gods (and me for writing this post). Ok, lets get back to business.</p>
+<p>Open ``<code>./mainaks_site/</code>`<code> directory in your terminal and run </code>`<code>hugo serve</code>``. If all goes well, you'll see something like the following image.</p>
+<img src="images/hugo_serve_output.png" alt="" width="700" height="">
+<img src="" alt="" width="700" height="">
+<p>In the above image, the ``<code>mysite2</code>`<code> is equivalent to </code>`<code>mainaks_site</code>`<code>. Now open </code>`<code>http://localhost:1313/</code>`` in your browser, you will find your blog up and running :)</p>
+<img src="images/hugo_browser_ss.png" alt="" width="700" height="">
+<h2>Edit Content and Add Images :</h2>
+<p>Ok, this step should be easy. All you need to do now is edit the markdown files in ``<code>./mainaks_site/content/posts/</code>`` directory.</p>
+<p> If you want to add images in your post, create a folder named ``<code>images</code>`<code> in the </code>`<code>./posts/</code>`` directory and store your images there, then use the following syntax in your markdown file to insert the images.</p>
+<pre><code>![](../images/doggo_2.png)</code></pre>
+<h2>Build Site and Upload Files to Github :</h2>
+<p>Navigate into ``<code>./mainaks_site/</code>`<code> and run </code>`<code>$ hugo</code>`` in your terminal, wait for hugo to finish building your site. Now you should see an output that looks like the following image.</p>
+<img src="images/hugo_build_output.png" alt="" width="700" height="">
+<p>Now upload the contents of the ``<code>./mainaks_site/public/</code>`<code> into your GitHub repository. This repository should be named in the format of </code>`<code>your_username.github.io</code>`<code>. Github pages deploys this repository automatically at </code>`<code>https://your_username.github.io</code>`<code>. In my case, it is hosted at </code>`<code>https://mainakdeb.github.io</code>`` where mainakdeb is my Github username.</p>
+<p>Well, thats how I got this blog up and running. I'll upload many more posts in the upcoming weeks, stay tuned for that :)</p>
+</article>
+
+<a class="back-link" href="../blogs/index.html">back to blogs</a>
+
+
+    
+  </div>
+
+  <script src="../static/js/crt.js"></script>
+</body>
+</html>

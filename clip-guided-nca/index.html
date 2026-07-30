@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CLIP Guided Neural Cellular Automata using PyTorch — mainak's page</title>
+  <meta name="description" content="CLIP Guided Neural Cellular Automata using PyTorch" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=VT323&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../static/css/crt.css" />
+  
+</head>
+<body>
+  <div class="screen">
+    <header class="topbar">
+      <a class="brand" href="../index.html">home</a>
+      <nav>
+        <a href="../blogs/index.html">blog</a>
+        <a href="https://mainakdeb.github.io/CV/CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </header>
+
+    <a class="back-link" href="../blogs/index.html">back to blogs</a>
+
+<article>
+  <h1>CLIP Guided Neural Cellular Automata using PyTorch</h1>
+  <div class="post-meta">Jun 06, 2022  •  4 min read</div>
+  <div class="tags"><span class="tag">#Emergent Systems</span><span class="tag">#Cellular Automata</span><span class="tag">#Neural Networks</span></div>
+  <img src="images/clip_pytorch_logo_wide.gif" width=800>
+<p>The gif above was generated using outputs from a Neural Cellular Automata model steered by OpenAI's CLIP (language model trained on image-text pairs) using the text prompt "The PyTorch Logo".</p>
+<h2>Primer on Neural CA</h2>
+<p>Classical Cellular Automata employs a set of predefined rules set by humans to update the grid state.  In neural CA, we let a neural network decide the rules as it trains and we guide this process using the language of loss functions.</p>
+<img src="images/primer_nca.png" width=800>
+<p>Once the network is trained, we can iteratively run forward passes and eventually get closer to our target grid-state.</p>
+<h2>Leveraging CLIP</h2>
+<p><a href="https://openai.com/blog/clip/">OpenAI's CLIP</a> (Contrastive Language-Image Pre-training) is trained on image-text pairs.</p>
+<p>The CLIP model consists of 2 sub-models:</p>
+<ul><li>Text Encoder</li><li>Image Encoder</li></ul>
+<p>Given an image and a text sequence, we could compare their encoding vectors (of the same dimension) to measure how relevant the caption is to the image.</p>
+<p>Cellular automata states can be encoded and then compared to text-encodings for a certain piece of text. In order top quantify this comparision, one could compute the cosine similarity or the dot product.</p>
+<h2>The CA Model</h2>
+<p>The CA model that I used is heavily inspired from the architecture used in the <a href="https://distill.pub/selforg/2021/textures/">Self Organizing Textures Paper</a>.</p>
+<p>We start out with a pool of noise tensors, with shape ``<code>[pool_size, num_channels, width, height]</code>``. Let's trace along one forward pass for a batch of 1 sampled from the pool</p>
+<ol><li>The first step is to Convolve the input tensor ``<code>[1, 12, 128, 128]</code>`` with four 3x3 fiilters. The idea behind this is to give the individual cell an idea of its neighboring pixels.</li></ol>
+<img src="images/perception.png" width=800>
+<ol><li>The resulting tensor ``<code>[1,48,128,128]</code>`` is then fed into 2 successive Convolutional Layers.  </li></ol>
+<img  src="images/nca_model.png" width=800>
+<ol><li>The model output is added to the input but before we perform this addition, we apply a boolean update mask over the network output (update vector). This operation can be also seen as an application of per-cell dropout. </li></ol>
+<img src="images/update_grid.png" width=800>
+<p>We replace samples in the pool that were sampled for the batch with the output states from the training step over this batch.</p>
+<h2>Guiding the CA Model</h2>
+<p>Our target is a string of text, this text is encoded using the CLIP text encoder.</p>
+<p>We only consider the first 3 channels (as RGB) of the 12 channel samples when computing the loss. The CLIP image encoder is used to encode a batch of images, and is compared to the encoded target text.</p>
+<img src="images/dot_product.png" width=835>
+<p>We also use penalize the model for pixel values lying beyond the range of ``<code>(-1.0, 1.0)</code>`` which we reser to as the overflow loss. The loss value of a batch could be represented as:</p>
+<center><b><tt>Loss = -torch.mean(dot product values of batch) + Overflow Loss</tt></b></center>
+<h2>Results</h2>
+<figure>
+<center><img src="https://raw.githubusercontent.com/Mainakdeb/text-2-cellular-automata/main/media/gifs/nose_cropped_compressed.gif" width=400>
+<figcaption>"noses"</figcaption></center>
+</figure>
+<figure>
+<center><img src="https://github.com/Mainakdeb/project-omega/raw/main/media/gifs/underwater_bioluminescence_16:9_compressed.gif" width=400>
+<figcaption>"Underwater Bioluminescence"</figcaption></center>
+</figure>
+<figure>
+<center><img src="https://raw.githubusercontent.com/Mainakdeb/text-2-cellular-automata/main/media/gifs/clip_pytorch_logo_16%3A9.gif
+" width=400>
+<figcaption>"The PyTorch Logo"</figcaption></center>
+</figure>
+<figure>
+<center><img src="https://github.com/Mainakdeb/project-omega/raw/main/media/gifs/northern_lights_meteor_shower_collage_short.gif" width=700>
+<figcaption>"The Northern Lights" and "Meteor Shower"</figcaption></center>
+</figure>
+<h2>Credits</h2>
+<ul><li><a href="https://distill.pub/2020/growing-ca/">Growing Neural Cellular Automata paper</a></li><li><a href="https://distill.pub/selforg/2021/textures/">Self Organizing textures paper</a></li><li><a href="https://openai.com/blog/clip/">OpenAI CLIP</a></li><li><a href="https://www.youtube.com/watch?v=8EN_8p9Toyc">Neural CA from scratch (video tutorial)</a> by <a href="https://twitter.com/zzznah">Alexander Mordvintsev</a></li><li><a href="https://setosa.io/ev/image-kernels/">Blog post on image filters</a> by <a href="https://twitter.com/vicapow">Victor Powell</a></li><li><a href="https://datascience.stackexchange.com/questions/744/cosine-similarity-versus-dot-product-as-distance-metrics">Cosine similarity vs dot product as distance metrics</a></li></ul>
+</article>
+
+<a class="back-link" href="../blogs/index.html">back to blogs</a>
+
+
+    
+  </div>
+
+  <script src="../static/js/crt.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GSoC - Coding Period Week 3 — mainak's page</title>
+  <meta name="description" content="GSoC - Coding Period Week 3" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=VT323&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../static/css/crt.css" />
+  
+</head>
+<body>
+  <div class="screen">
+    <header class="topbar">
+      <a class="brand" href="../index.html">home</a>
+      <nav>
+        <a href="../blogs/index.html">blog</a>
+        <a href="https://mainakdeb.github.io/CV/CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </header>
+
+    <a class="back-link" href="../blogs/index.html">back to blogs</a>
+
+<article>
+  <h1>GSoC - Coding Period Week 3</h1>
+  <div class="post-meta">Jun 28, 2021  •  2 min read</div>
+  <div class="tags"><span class="tag">#GSoC</span><span class="tag">#DevoWorm</span></div>
+  <h2>Work Done This Week (June 21st to June 27th)</h2>
+<ul><li>Converted the upgraded segmentation model into ONNX format.</li></ul>
+<ul><li>Ran inference on the ONNX model (colab and local environment) to make sure it works. Then used Gradio to build a GUI.</li></ul>
+<ul><li>The next step was to host this online. Gradio has their own hosting service, but that costs $7/month. Looked into ways of hosting apps online for free, decided to go with Heroku.</li></ul>
+<ul><li>Created the additional files required for hosting online on Heroku:<ul><li><code>Procfile</code></li><li><code>requirements.txt</code></li><li><code>setup.sh</code></li></ul></li></ul>
+<ul><li>Pushed the files into a github repository, and linked it to the Heroku app.</li></ul>
+<ul><li>Deployed a bare-bones version of the app online.</li></ul>
+    <img src="images/devolearn-web-demo-1.gif" alt="" width="700" height="">
+<ul><li>Adding the centroid mapping feature turned out to be tricky. It worked on local-host, but did not work when deployed on Heroku. </li></ul>
+<ul><li>Checked the logs, the error message read :</li></ul>
+<p>    <em><code>ImportError: libSM.so.6: cannot open shared object file: No such file or directory</code></em></p>
+<ul><li>Turns out, it was in issue with OpenCV's dependency on libSM6. I replaced <code>opencv-python==4.5.2.54</code> with <code>opencv-python-headless==4.5.2.54</code> and it worked!</li></ul>
+    <img src="images/devolearn-web-demo-2.gif" alt="" width="700" height="">
+<ul><li>Not everybody has images of C. elegans embryos saved on their computer, so I decided to add in some examples on the site. </li></ul>
+<ul><li>Note: The Heroku app is currently linked to a personal repository for quick prototyping and testing. </li></ul>
+<ul><li>Links:<ul><li>Converting torch model to ONNX - <a href="https://github.com/Mainakdeb/GSoC-2021/blob/main/cell-membrane-segmentation/torch_to_onnx.ipynb">Notebook</a></li><li>Test repository linked to the cell membrane segmentation heroku app - <a href="https://github.com/Mainakdeb/devolearn-web-test">Link</a></li><li><a href="https://devolearn-web-test.herokuapp.com/">Cell membrane segmentation web app</a> (test phase)</li></ul></li></ul>
+<h2>Planned:</h2>
+<ul><li>Make a couple more changes to the GUI hosted on Heroku.</li><li>Upgrade the DevoLearn cell lineage population model.</li><li>Host the cell lineage population model online.</li><li>Resume work on the cell nucleus segmentation model.</li></ul>
+</article>
+
+<a class="back-link" href="../blogs/index.html">back to blogs</a>
+
+
+    
+  </div>
+
+  <script src="../static/js/crt.js"></script>
+</body>
+</html>

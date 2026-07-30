@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GSoC - Coding Period Week 5 — mainak's page</title>
+  <meta name="description" content="GSoC - Coding Period Week 5" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=VT323&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../static/css/crt.css" />
+  
+</head>
+<body>
+  <div class="screen">
+    <header class="topbar">
+      <a class="brand" href="../index.html">home</a>
+      <nav>
+        <a href="../blogs/index.html">blog</a>
+        <a href="https://mainakdeb.github.io/CV/CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </header>
+
+    <a class="back-link" href="../blogs/index.html">back to blogs</a>
+
+<article>
+  <h1>GSoC - Coding Period Week 5</h1>
+  <div class="post-meta">Jul 12, 2021  •  1 min read</div>
+  <div class="tags"><span class="tag">#GSoC</span><span class="tag">#DevoWorm</span></div>
+  <h2>Work Done This Week (July 5th to July 12th)</h2>
+<ul><li>Refactored the training loop for the nucleus segentation model, this enabled faster prototyping and experimentation.</li><li>Integrated Optuna for automated hyperparameter optimization. Ran 200 optuna trials to find training hyperparams.</li><li>Optuna samples hyperparams from a given range, which in this case was -<ul><li>Learning rate: 0.5e-3 to 20e-3</li><li>Batch Size: 8 to 64</li></ul></li><li>Each trial trained the model on 10% of available data for 3 epochs, and returned the resulting IOU score.</li><li>The hyperparams from the best optuna trial is shown in the image below</li></ul>
+<img src="images/best_params.png" alt="" width="1000" height="">
+<ul><li>As a recap, the model details are :<ul><li>Type - Feature Pyramid Network</li><li>Backbone - ResNet-18</li></ul></li></ul>
+<ul><li>Trained the model for 50 epochs, the training metrics are showcased below.</li></ul>
+<img src="images/train_metrics.png" alt="" width="1000" height="">
+<ul><li>The model seems to perform well, even when the inputs are super noisy/underexposed. The GIF below shows model predictions on 2D slices of 3D data at one point in time.</li></ul>
+<img src="images/slices.gif" alt="" width="1000" height="">
+<ul><li>More inference examples:</li></ul>
+<img src="images/infer_collage_nuc_seg.png" alt="" width="1000" height="">
+<ul><li>Feel free to check out this work:<ul><li>Github - <a href="https://github.com/Mainakdeb/GSoC-2021/blob/main/cell-nucleus-segmentation/train_segmentation_model.ipynb">Link</a></li><li>NBViewer - <a href="https://nbviewer.jupyter.org/github/Mainakdeb/GSoC-2021/blob/main/cell-nucleus-segmentation/train_segmentation_model.ipynb">Link</a></li></ul></li></ul>
+<h2>Planned:</h2>
+<ul><li>Build a GUI for the online demo.</li><li>Add this model to the DevoLearn library.</li><li>Swap out the existing DevoLearn cell membrane segmentation model with the new upgraded model.</li></ul>
+</article>
+
+<a class="back-link" href="../blogs/index.html">back to blogs</a>
+
+
+    
+  </div>
+
+  <script src="../static/js/crt.js"></script>
+</body>
+</html>

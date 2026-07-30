@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GSoC - Coding Period Week 8 — mainak's page</title>
+  <meta name="description" content="GSoC - Coding Period Week 8" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=VT323&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../static/css/crt.css" />
+  
+</head>
+<body>
+  <div class="screen">
+    <header class="topbar">
+      <a class="brand" href="../index.html">home</a>
+      <nav>
+        <a href="../blogs/index.html">blog</a>
+        <a href="https://mainakdeb.github.io/CV/CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </header>
+
+    <a class="back-link" href="../blogs/index.html">back to blogs</a>
+
+<article>
+  <h1>GSoC - Coding Period Week 8</h1>
+  <div class="post-meta">Aug 02, 2021  •  1 min read</div>
+  <div class="tags"><span class="tag">#GSoC</span><span class="tag">#DevoWorm</span></div>
+  <h2>Work Done This Week (July 26th to August 1st)</h2>
+<ul><li>Converted the DevoLearn Lineage Population model into ONNX. </li><li>Defined the funtions needed to run the Lineage population model via the GUI.</li><li>Ran tests on Localhost to ensure everything is in place.</li><li>Created the required files for hosting the web-app online using Heroku.<ul><li>Procfile - Procfile is a mechanism for declaring what commands are run by the heroku dyno.</li><li>setup.sh - this specifies the commands to be executed to configure the environment before running the app.</li><li>requirements.txt - lists the packages to be installed.</li></ul></li></ul>
+<ul><li>The web app is now hosted online, feel free to try it out - <a href="https://devolearn-web-test.herokuapp.com/">https://devolearn-web-test.herokuapp.com/</a></li></ul>
+<ul><li>Link to Code - <a href="https://github.com/Mainakdeb/devolearn-web-test">Github repository</a></li></ul>
+<img src="images/devolearn_web_collage.png" alt="" width="1000" height="">
+<h2>Why did I not use Gradio for building the GUI?</h2>
+<ul><li>I could not find a way to host 3 different models in one web-app using Gradio. </li><li>Using Gradio would have led to 3 different web links for the 3 models, which is not convenient.</li></ul>
+<h2>Planned:</h2>
+<ul><li>Add content regarding the models in the web-app. </li><li>Try to render interactive plots (using Plotly) in the GUI. </li><li>Look into ways of running bulk inference using the web-GUI.</li><li>Migrate the web-app to an official DevoLearn repository.</li><li>Move from Travis CI to Github Actions.</li><li>Release a new DevoLearn version.</li><li>Update the DevoLearn starter notebook.</li></ul>
+</article>
+
+<a class="back-link" href="../blogs/index.html">back to blogs</a>
+
+
+    
+  </div>
+
+  <script src="../static/js/crt.js"></script>
+</body>
+</html>
